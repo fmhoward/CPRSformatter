@@ -1,0 +1,4191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0097)https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html -->
+<html class="no-js" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./CPRS Lab Formatter_files/analytics.js.download" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app203.us.archive.org';v.server_ms=187;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./CPRS Lab Formatter_files/bundle-playback.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./CPRS Lab Formatter_files/wombat.js.download" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="./CPRS Lab Formatter_files/ruffle.js.download"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www-personal.umich.edu/~fmhoward/formatter.html","20230117075429","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1673942069");
+</script>
+<link rel="stylesheet" type="text/css" href="./CPRS Lab Formatter_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./CPRS Lab Formatter_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<style>
+#clipb
+{
+	width: 704px; 
+	height: 18px;
+	min-height: 18px;
+	max-height: 18px;
+	margin-left: 8px;
+	margin-bottom: 5px;
+	border-width: 2px 2px 2px; 
+	background-color:white; 
+	border-style: solid; 
+	overflow: hidden;
+	border-color: rgb(109, 119, 119) rgb(247, 247, 247) rgb(247, 247, 247) rgb(119, 119, 119); 
+}
+#edtData
+{
+   	white-space: pre-wrap;       /* css-3 */
+   	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+   	white-space: -pre-wrap;      /* Opera 4-6 */
+   	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;
+	text-align: left;
+	font-family: Courier;
+	border-width: 2px 2px 2px; 
+	background-color:white; 
+	border-style: solid; 
+	border-color: rgb(119, 119, 119) rgb(247, 247, 247) rgb(247, 247, 247) rgb(119, 119, 119); 
+	width: 700px; 
+	margin-right: auto; 
+	margin-left: auto; 
+	display: block; 
+	height: 400px; 
+	overflow-y: auto; 
+	min-height: 400px; 
+	max-height: 400px;
+     font-size: 10pt;
+	overflow-x: hidden;
+}
+#edtData p
+{
+	margin: 0px;
+}
+#popupform
+{
+	width:100%;
+	height:100%;
+	opacity:.95;
+	top:0;
+	left:0;
+	display:none;
+	position:fixed;
+background-color:#313131;
+	overflow:auto;
+}
+#box{
+    float:left;
+    background-color:#fff;
+    color:black;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 90%;
+    height: 90%;
+    margin-left: 3%;
+    margin-top: 2%;
+    border:2px solid #ccc;
+    -moz-border-radius: 20px;
+    -webkit-border-radius:20px;
+    -khtml-border-radius:20px;
+    -moz-box-shadow: 0 1px 5px #333;
+    -webkit-box-shadow: 0 1px 5px #333;
+    z-index:101;
+}
+
+#close
+{
+    z-index: 102;
+    position: fixed;
+    top: 1.5%;
+    right: 2.5%;
+    cursor: pointer;
+    border-radius: 15px;
+    color: #fff;
+    border: 1px solid white;
+    background: #C04F51;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 12px 2px 2px 2px;   
+}
+#close:before {
+    content: "X";
+    font-family: Courier;
+}
+</style>
+
+
+<meta content="IE=11.0000" http-equiv="X-UA-Compatible">
+<meta content="IE=11.0000" http-equiv="X-UA-Compatible">
+<meta content="IE=11.0000" http-equiv="X-UA-Compatible"><!--- Basic Page Needs
+   ================================================== -->
+<title>CPRS Lab Formatter</title>
+<meta name="description" content="Format CPRS lab data">
+<meta name="author" content="Fred Howard"><!-- Mobile Specific Metas
+   ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!-- CSS
+    ================================================== --><link rel="stylesheet" href="./CPRS Lab Formatter_files/default.htm"><link rel="stylesheet" href="./CPRS Lab Formatter_files/layout.htm"><!-- Script
+   ================================================== -->
+<script language="javascript">
+
+var vals = {};
+var listVals = {};
+var listCrit = {};
+var listUH = {};
+var listPH = {};
+var listTime = {};
+var listSpecimen = {};
+var listMicro = new Array();
+var listMicroSpec = new Array();
+var medList = new Array();
+var replaceArray = new Array();
+var msDay = 86400000;  
+var cbcData = "";
+var chemistryData = "";
+var urineData = "";
+var pleuralData = "";
+var peritonealData = "";
+var cexclude = "||";
+var uexclude = "||";
+var csfData = "";
+var otherData = "";
+var listComment = {};
+var blankLength = 55;
+var numberMeds = 0;
+var calledMeds = 0;
+var medListOutpatient = false;
+//UPMC CHANGES
+replaceArray["CREATININE-e"] = "Creatinine";
+replaceArray["TOTAL BILIRUBIN"] = "TBil"; 
+replaceArray["DIRECT BILIRUBIN"] = "DBil"; 
+replaceArray["ALP"] = "ALK"; 
+replaceArray["TOTAL PROTEIN,SERUM"] = "Protein"; 
+replaceArray["LIPASE (LX)"] = "Lipase"; 
+replaceArray["HGB A1C"] = "A1c";
+
+//Chemistries
+replaceArray["IRON"] = "Iron";
+replaceArray["TIBC"] = "TIBC";
+replaceArray["IRON SATURATION"] = "Iron sat";
+replaceArray["FOLATE,SERUM"] = "Serum folate";
+replaceArray["FOLATE,SERUM(pre 9-27-05)"] = replaceArray["FOLATE,SERUM"];
+replaceArray["CALCIUM"] = "Calcium";
+replaceArray["MAGNESIUM"] = "Mag";
+replaceArray["PO4,SERUM"] = "Phos";
+replaceArray["PHOSPHORUS"] = "Phos";
+replaceArray["TROPONIN I"] = "Trop I";
+replaceArray["FERRITIN"] = "Ferritin";
+replaceArray["D-DIMER"] = "D-dimer";
+replaceArray["ALPHA-FETOPROTEIN"] = "AFP"; 
+replaceArray["PROSTATIC SPECIFIC ANTIGEN"] = "PSA";
+replaceArray["METHYLMALONIC ACID (SERUM)"] = "Serum MMA";
+replaceArray["HEMOGLOBIN A1C"] = "A1c";
+replaceArray["EST.AVERAGE GLUCOSE"] = "Est Avg Glucose";
+replaceArray["URIC ACID"] = "Uric Acid";
+replaceArray["OSMOLALITY"] = "Osmolality";
+replaceArray["PREALBUMIN"] = "Prealbumin";
+replaceArray["B-HYDROXYBUTYRATE"] = "B-Hydroxybutyrate"
+replaceArray["CALCIUM,FREE (WHAV)"] = "iCal";
+replaceArray["ALBUMIN"] = "Albumin";
+replaceArray["GLU POC"] = "Glucose";
+replaceArray["GLUCOSE"] = "Glucose";
+replaceArray["ANCILLARY GLUCOSE"] = "Glucose";
+replaceArray["Hct (Quest)"] = "HCT";
+replaceArray["HEMATOCRIT"] = "HCT";
+replaceArray["zz-CPK (WHAV)pre4-24-01"] = "CPK";
+replaceArray["FASTING GLUCOSE"] = "Fasting Glucose";
+replaceArray["TROPONIN-I (10/1/99-11/5/00)"] = "Trop I";
+replaceArray["TROPONIN-I (DC'D 7-26-10)"] = "Trop I";
+replaceArray["LACTIC"] = "Lactate";
+replaceArray["eGFR(IDMS)"] = "eGFR";
+replaceArray["eGFR(DC'D 4-16-10)"] = "eGFR";
+replaceArray["LACTIC ACID"] = "Lactate";
+replaceArray["TROPONIN-I (11/6/00-11/6/01)"] = "Trop I";
+replaceArray["bnp"] = "BNP";
+replaceArray["MB-Ag"] = "CK-MB";
+replaceArray["CALCIUM,FREE (NEWT)"] = "iCal";
+replaceArray["PROCALCITONIN"] = "Procal";
+replaceArray["MB-Ag(DC'D 10/3/16)"] = "MB-Ag";
+replaceArray["(WRX) PROTEIN,SERUM"] = "Protein";
+replaceArray["PROTEIN, TOTAL"] = "Protein";
+replaceArray["ALBUMIN,ELECT."] = "Albumin";
+replaceArray["DC'D PROCAL"] = "Procal";
+replaceArray["URIC ACID,URINE RANDOM"] = "Uric acid, random";
+replaceArray["TPMT"]  = "TPMT";
+replaceArray["LIPASE (WHAV)DC'd 7-13-99"];
+replaceArray["CREATININE,SERUM"] = "Creatinine";
+replaceArray["CREATININE"] = "Creatinine";
+replaceArray["CARBON DIOXIDE"] = "CO2";
+replaceArray["ALT(SGPT)"] = "ALT";
+replaceArray["AST(SGOT)"] = "AST";
+replaceArray["VITAMIN B-12"] = "B12";
+//Urine
+replaceArray["SODIUM,URINE"] = "Na";
+replaceArray["CREATININE,URINE"] = "Creatinine";
+replaceArray["PROTEIN,URINE"] = "Protein";
+replaceArray["miCROALB./CREAT RATIO-SPOT"] = "Spot Albumin/Cr ratio";
+replaceArray["UREA NITROGEN,URINE"] = "Urea nitrogen";
+replaceArray["CREATININE, URINE RANDOM"] = "Creatinine";
+replaceArray["POTASSIUM,URINE"] = "Potassium";
+replaceArray["CHLORIDE,URINE"] = "Chloride";
+replaceArray["CRYSTALS"] = "Crystals";
+replaceArray["EOSINOPHILS,URINE"] = "Eosinophils";
+replaceArray["miCROALBUMIN,24-HR"] = "24h Albumin";
+replaceArray["miCROALB/CREAT RATIO-24 HR"] = "24h Albumin/Cr";
+replaceArray["VOLUME"] = "Urine Volume";
+replaceArray["CALCIUM,URINE"] = "Calcium";
+replaceArray["MAGNESIUM,RANDOM UR"] = "Magnesium";
+replaceArray["CREATININE,RANDOM UR"] = "Creatinine";
+replaceArray["CREATININE (URINE,RANDOM)"] = "Creatinine";
+replaceArray["AM PHOSPHATE CRYSTALS"] = "Phosphate Crystals"
+
+//Liver
+replaceArray["GAMMA GLUTAMYLTRANSFERASE"] = "GGT";
+replaceArray["AMMONIA"] = "Ammonia";
+replaceArray["SMMUSC"] = "Anti-Smooth Muscle";
+replaceArray["ANTI-LKM"] = "Anti-LKM";
+replaceArray["SGOT (NEWT)pre 4-2-01"] = "AST";
+replaceArray["SGPT (NEWT)pre 4-2-01"] = "ALT";
+replaceArray["ALKALINE PHOSPHATASE"] = "ALK";
+replaceArray["TOT. BILIRUBIN"] = "TBil";
+replaceArray["BILIRUBIN, TOTAL"] = "TBil";
+replaceArray["DIR. BILIRUBIN"] = "DBil";
+replaceArray["SGOT (WHAV)pre 4-24-01"] = "AST";
+replaceArray["SGPT (WHAV)pre 4-24-01"] = "ALT";
+replaceArray["AMYLASE"] = "Amylase";
+replaceArray["LIPASE"] = "Lipase";
+replaceArray["LIPASE (WHAV) DC'd 4-23-01"] = replaceArray["LIPASE"];
+replaceArray["ALK PHO"] = "ALK";
+replaceArray["AMYLASE (WHAV) pre 4-23-01"] = replaceArray["AMYLASE"];
+replaceArray["ALPHA-1 ANTITRYPSIN"] = "Alpha-1 antitrypsin";
+replaceArray["AMMONIA (WHAV)pre 4-24-01"] = "Ammonia";
+replaceArray["INTRINSIC FACTOR AB"] = "Intrinsic Factor Ab";
+replaceArray["ENDOMYSIAL AB IGA"] = "Endomysial Ab IgA";
+replaceArray["ENDOMYSIAL AB TITER"] = "Endomysial Ab Titer"
+replaceArray["CD IN"] = "Celiac interp";
+replaceArray["CERULOPLASMIN"] = "Ceruloplasmin";
+replaceArray["HFEgene"] = "HFE gene";
+
+//Endocrine
+replaceArray["RENIN ACTIVITY(PRA)"] = "Renin activity";
+replaceArray["ALDOSTERONE,PLASMA"] = "Aldosterone";
+replaceArray["ALDOSTERONE/RENIN RATIO"] = "Aldosterone/renin";
+replaceArray["NOREPINEPHRINE"] = "Norepinephrine";
+replaceArray["DOPAMINE"] = "Dopamine";
+replaceArray["EPINEPHRINE"] = "Epinephrine";
+replaceArray["TOT.CATECHOLAMINES"] = "Catecholamines";
+replaceArray["FRUCTOSAMINE"] = "Fructosamine";
+replaceArray["shbg"] = "SHBG";
+replaceArray["D TOT"] = "Total Vit D";
+replaceArray["VITAMIN D,TOTAL(SCREEN)"] = "Total Vit D";
+replaceArray["VITAMIN D TOTAL(SCREEN)"] = "Total Vit D";
+replaceArray["VIT D 25-OH(WRJ)"] = "Total Vit D";
+replaceArray["vIT D 25-OH,TOT(Rx Monitor)"] = "Total Vit D";
+replaceArray["vIT D 25-0H,D2(Rx Monitor)"] = "Vit D2";
+replaceArray["vIT D 25-OH,D3(Rx Monitor)"] = "Vit D3";
+replaceArray["FREE T3"] = "Free T3";
+replaceArray["C-PEPTIDE"] = "C-Peptide";
+replaceArray["INSULIN AUTOANTIBODY"] = "Insulin autoantibody";
+replaceArray["ANTI GAD 65"] = "Anti-GAD65";
+replaceArray["PTH (INTACT) D'CD 3-30-15"] = "PTH";
+replaceArray["PTH (INTACT)QUEST"] = "PTH";
+replaceArray["PTH (INTACT)"] = "PTH";
+replaceArray["ESTRONE"] = "Estrone";
+replaceArray["CORTISOL PM"] = "Cortisol PM";
+replaceArray["DHEA-S"] = "DHEA";
+replaceArray["DHEA"] = "DHEA";
+replaceArray["ACTH"] = "ACTH";
+replaceArray["ALDO-S"] = "Aldosterone";
+replaceArray["ZZTESTO"] = "Total Testosterone";
+replaceArray["T4,FREE"] = "Free T4";
+replaceArray["T-4"] = "T-4";
+replaceArray["Testo,Tot Sendout"] = "Total Testosterone";
+replaceArray["ESTRADIOL(pre 2-24-05)"] = "Estradiol";
+replaceArray["ESTRADIOL"] = "Estradiol";
+replaceArray["Testosterone, FREE(SENDOUT)"] = "Free Testosterone";
+replaceArray["fR TEST"] = "Free Testosterone";
+replaceArray["T%UPTAKE"] = "Thyroid uptake %";
+replaceArray["T%UPTAKE(pre 4-16-01)"] = replaceArray["T%UPTAKE"];
+replaceArray["tESTO F"] = "Free Testosterone";
+replaceArray["FTI(pre 4-16-01)"] = "FTI";
+replaceArray["tESTOSTERONE,TOTAL (12-1-97)"] = "Total Testosterone";
+replaceArray["ALDOSTERONE,SERUM"] = "Aldosterone";
+replaceArray["PROLACTIN"] = "Prolactin";
+replaceArray["PTH (INTACT)pre 1-2-03"] = "PTH";
+replaceArray["THYROID PEROXIDASE AB"] = "Thyroperoxidase Ab";
+replaceArray["ANTI-THYROGLOBULIN AB"] = "Anti-Thyroglobulin Ab";
+replaceArray["PTH RELATED PROTEIN"] = "PTHrP";
+replaceArray["CALCITONIN"] = "Calcitonin";
+replaceArray["CORTISOL AM"] = "Cortisol AM";
+replaceArray["ERYTHROPOIETIN"] = "Epo";
+
+
+//Heme
+replaceArray["A/G RATIO(EP)"] = "A/G Ratio";
+replaceArray["GAMMA GLOBULIN(EP)"] = "G Globulin";
+replaceArray["BETA GLOBULIN(EP)"] = "B Globulin";
+replaceArray["ALPHA2 GLOBULIN(EP)"] = "A2 Globulin";
+replaceArray["ALPHA1 GLOBULIN(EP)"] = "A1 Globulin";
+replaceArray["ALBUMIN(EP)"] = "Albumin";
+replaceArray["PROTEIN,TOTAL(EP)"]="Protein";
+
+replaceArray["FREE K/L LC RATIO"] = "Free K/L Ratio";
+replaceArray["FREE K/L RATIO(b)"] = "Free K/L Ratio";
+replaceArray["KAPPA LC FREE SERUM"] = "Free Kappa LC";
+replaceArray["KAPPA LC FREE SERUM(b)"] = "Free Kappa LC";
+replaceArray["LAMBDA LC FREE SERUM"] = "Free Lambda LC";
+replaceArray["LAMBDA LC FREE SERUM(b)"] = "Free Lambda LC";
+replaceArray["KAPPA,SERUM QNT"] = "Total Kappa LC";
+replaceArray["LAMBDA,SERUM QUANT"] = "Total Lambda LC";
+replaceArray["KAPPA/LAMBDA RATIO,SERUM"] = "Total K/L Ratio";
+replaceArray["IGA,SERUM"] = "IgA";
+replaceArray["IGG,SERUM"] = "IgG";
+replaceArray["IGM,SERUM"] = "IgM";
+replaceArray["IGE,SERUM"] = "IgE";
+
+replaceArray["BETA 2 GLYCOP,IGG"] = "B2 Glycoprotein IgG";
+replaceArray["BETA 2 GLYCOP,IGM"] = "B2 Glycoprotein IgM";
+replaceArray["BETA 2 GLYCOP,IGA"] = "B2 Glycoprotein IgA";
+replaceArray["CAR IgG"] = "Cardiolipin IgG";
+replaceArray["CAR IgM"] = "Cardiolipin IgM";
+replaceArray["HAPTOGLOBIN"] = "Haptoglobin";
+replaceArray["HEMOGLOBIN A"] = "HGB A";
+replaceArray["HEMOGLOBIN F"] = "HGB F"
+replaceArray["HEMOGLOBIN A2"] = "HGB A2"
+replaceArray["HGB SCREEN"] = "HGB Screen";
+replaceArray["HGB REVIEWER"] = "HGB Reviewer";
+
+replaceArray["SEROTONIN RELEASE ASSAY"] = "Serotonin release";
+replaceArray["PATIENT OD"] = "HIT Ab OD";
+replaceArray["BETA 2 MICROGLOBULIN,SERUM"] = "B2 Microglobulin";
+replaceArray["RETICULATED PLATELET(YALE)"] = "Retic PLT";
+replaceArray["WBC (FCM)"] = "WBC";
+replaceArray["LYMPH % (FCM)"] = "Lymph";
+replaceArray["ABS LYMPH (FCM)"] = "ABSOLUTE LYMPHOCYTE COUNT";
+replaceArray["DC'D K/L"] = "Total K/L Ratio";
+replaceArray["IGA"] = "IgA";
+replaceArray["IGM"] = "IgM";
+replaceArray["IGG"] = "IgG";
+replaceArray["DC'D LAMBDA"] = "Total Lambda LC";
+replaceArray["KAPPA QNT,SERUM DC'D 4/13/15"] = "Total Kappa LC";
+replaceArray["RETICULOCYTES (%)"] = "Retic %";
+replaceArray["ABSOLUTE RETIC COUNT"] = "Abs Retic #"; 
+replaceArray["RETICULOCYTE HGB"] = "Retic Hgb";
+replaceArray["IMMATURE RETIC FRACTION"] = "Imm Retic Frxn";
+replaceArray["IMMATURE PLT FRACTION"] = "Imm plt";
+replaceArray["NUCLEATED RBC/100WBC"] = "NRBC/100WBC";
+replaceArray["NUCLEATED RED CELLS"] = "NRBC/100WBC";
+replaceArray["ALPHA-1 FRACTION"] = "A1 Globulin";
+replaceArray["ALPHA-2 FRACTION"] = "A2 Globulin";
+replaceArray["BETA FRACTION"] = "B Globulin";
+replaceArray["GAMMA FRACTION"] = "G Globulin";
+replaceArray["GAMMA GLOBULIN"] = "G Globulin";
+
+replaceArray["ALPHA1 GLOBULIN(EP)(b)"] = "A1 Globulin";
+replaceArray["ALPHA2 GLOBULIN(EP)(b)"] = "A2 Globulin";
+replaceArray["BETA GLOBULIN(EP)(b)"] = "B Globulin";
+replaceArray["GAMMA GLOBULIN(EP)(b)"] = "G Globulin";
+replaceArray["A/G RATIO(EP)(b)"] = "A/G Ratio";
+replaceArray["PROTEIN,TOTAL(EP)(b)"] = "Protein";
+replaceArray["ALBUMIN(EP)(b)"] = "Albumin";
+replaceArray["PROTEIN, SERUM TOTAL (B)"] = "Protein";
+replaceArray["A/G RATIO,SERUM (DC'd)"] = "A/G Ratio";
+replaceArray["IgA,Serum"] = "IgA";
+replaceArray["PFA COLLAGEN/EPI"] = "PFA Collagen/Epi";
+replaceArray["PFA COLLAGEN/ADP"] = "PFA Collagen/ADP";
+replaceArray["JAK2 MUTATION"] = "JAK2 Mutation";
+replaceArray["BCR-ABL1/ABL1%"] = "BCR-ABL1 %";
+replaceArray["BCR-ABL1/ABL1% (IS)"] = "BCR-ABL1 % (IS)";
+replaceArray["P190 BCR-ABL1"] = "P190 BCR-ABL1";
+replaceArray["P210 BCR-ABL1"] = "P210 BCR-ABL1";
+replaceArray["FLOW CYTOMETRY-YALE"] = "Flow Cytometry (Yale)";
+replaceArray["CD3+ %"] = "CD3+ %";
+replaceArray["CD3+ #"] = "CD3+ #";
+replaceArray["CD3+,CD4+ %"] = "CD3+,CD4+ %";
+replaceArray["CD3+,CD4+ #"] = "CD3+,CD4+ #";
+replaceArray["CD3+,CD8+ %"] = "CD3+,CD8+ %";
+replaceArray["CD3+,CD8+ #"] = "CD3+,CD8+ #";
+replaceArray["CD4/CD8 RATIO"] = "CD4/CD8 Ratio";
+replaceArray["CD19+ %"] = "CD19+ %";
+replaceArray["CD19+ #"] = "CD19+ #";
+replaceArray["CD56+/CD16+//CD3- %"] = "CD56+/CD16+/CD3- %";
+replaceArray["CD56+/CD16+//CD3- #"] = "CD56+/CD16+/CD3- #";
+
+replaceArray["THROMBIN TIME"] = "Thrombin Time";
+replaceArray["dRVVT MIX INTERPRET"] = "dRVVT interpret";
+replaceArray["PTT-LA SCREEN"] = "PTT-LA";
+replaceArray["HEXAGONAL PHASE CONFIRMATION"] = "Hexagonal phase confirm";
+replaceArray["DRVVT SCREEN"] = "dRVVT Screen";
+replaceArray["DRVVT CONFIRM"] = "dRVVT Confirm";
+
+replaceArray["INTERLEUKIN-2 RECEPTOR"] = "IL-2 Receptor";
+replaceArray["PT(YALE)"] = "PT";
+replaceArray["PTT (YALE)"] = "PTT";
+replaceArray["FACTOR VII ACT"] = "Factor VII Act";
+replaceArray["FACTOR IX ACT,YALE"] = "Factor IX Act";
+replaceArray["FACTOR II ACT"] = "Factor II Act";
+replaceArray["FACTOR X ACT"] = "Factor X Act";
+
+replaceArray["PROTHROMBIN MUTATION"] = "Prothrombin Mutation";
+replaceArray["FACTOR V LEIDEN"] = "Factor V Leiden";
+replaceArray["PROTEIN C ANTIGEN"] = "Protein C Ag";
+replaceArray["PROTEIN S ANTIGEN"] = "Protein S Ag";
+replaceArray["PROTEIN S ACTIVITY"] = "Protein S Activity";
+replaceArray["PROTEIN C ACTIVITY"] = "Protein C Activity";
+replaceArray["ABSOLUTE GRANULOCYTES"] = "ABSOLUTE NEUTROPHIL COUNT";
+replaceArray["ABSOLUTE LYMPHOCYTES"] = "ABSOLUTE LYMPHOCYTE COUNT";
+replaceArray["ABSOLUTE EOS."] = "AEC";
+replaceArray["ABSOLUTE BASOPHILS"] = "ABC";
+replaceArray["ABSOLUTE MONOCYTES"] = "AMC";
+replaceArray["ABSOLUTE IG"] = "AIG";
+replaceArray["ABSOLUTE NRBC"] = "ANRBC";
+replaceArray["EOS %"] = "Eos";
+replaceArray["IG %"] = "Bands";
+replaceArray["ESR(NEW)"] = "ESR";
+replaceArray["CRP(INFLAMMATORY)"] = "CRP";
+replaceArray["esr(dc'd 3/17)"] = "ESR";
+replaceArray["CREATINE KINASE"] = "CK";
+
+//Coags
+replaceArray["FIBRINOGEN"] = "Fibrinogen";
+replaceArray["PT"] = "PT";
+replaceArray["pt"] = "PT";
+replaceArray["PTT"] = "PTT";
+replaceArray["INR"] = "INR";
+replaceArray["CLINIC INR (POC)"] = "INR POC";
+replaceArray["ANTI-Xa LMW HEPARIN"] = "Anti-Xa LMWH";
+replaceArray["ANTI-Xa UF HEPARIN"] = "Anti-Xa UFH";
+
+//Nutritional
+replaceArray["COPPER,SERUM"] = "Copper";
+replaceArray["ZINC,PLASMA"] = "Zinc";
+replaceArray["ALUMINUM,PLASMA"] = "Aluminum";
+replaceArray["CAROTENE"] = "Carotene";
+replaceArray["VITAMIN B1"] = "Vit B1";
+replaceArray["HOMOCYSTEINE,SERUM"] = "Homocysteine";
+replaceArray["CHOLESTEROL"] = "CHOL";
+replaceArray["TRIGLYCERIDE"] = "TG";
+replaceArray["HDL"] = "HDL";
+replaceArray["HDL CHOLESTEROL"] = "HDL";
+replaceArray["LDL"] = "LDL";
+replaceArray["LDL CHOLESTEROL (CALC)"] = "LDL";
+replaceArray["LDL,DIRECT"] = "LDL Direct";
+replaceArray["ZLIPOPROTEIN(A)pre 3-29-06"] = "Lipoprotein(A)";
+replaceArray["VITAMIN B-6"] = "Vit B6";
+
+//Rheum
+replaceArray["ANGIOTENSIN CONV ENZ,SERUM"] = "ACE";
+replaceArray["RHEUMATOID FACTOR"] = "RF";
+replaceArray["RHEUMATOID FACTOR (B)"] = "RF";
+replaceArray["CRYGLOBULIN,SERUM"] = "Cryoglobulin";
+replaceArray["WEST. SED RATE"] = "ESR";
+replaceArray["CRP,INFLAMMATION"] = "CRP";
+replaceArray["CRPinfl"] = "CRP";
+replaceArray["CRP,CARDIAC RISK"] = "Cardiac CRP";
+replaceArray["ANA TITER"] = "ANA Titer";
+replaceArray["ANA SCREEN (B)"] = "ANA";
+replaceArray["ANTI-SCL-70"] = "Anti-SCL-70";
+replaceArray["ANCA IFA SCREEN"] = "ANCA IFA Screen";
+replaceArray["ANGIOTENSIN CONV ENZ,CSF"] = "ACE";
+replaceArray["ESR(Manual/Westergren)"] = "ESR";
+replaceArray["CENTROMERE"] = "Centromere";
+replaceArray["PERIPHERAL"] = "Peripheral";
+replaceArray["SPECKLED"] = "Speckled";
+replaceArray["HOMOGENOUS"] = "Homogeneous";
+replaceArray["HOMOGENEOUS"] = "Homogeneous";
+replaceArray["NUCLEOLAR"] = "Nucleolar";
+replaceArray["ANTI-JO-1"] = "Anti-Jo-1";
+replaceArray["ANTI-SCL-70"] = "Anti-Scl-70";
+replaceArray["ANTI-dsDNA"] = "Anti-dsDNA";
+replaceArray["ANTI-SM/RNP"] = "Anti-Sm/RNP";
+replaceArray["ANTI-CHROMATIN"] = "Anti-Chromatin";
+replaceArray["PL-7 AUTO ABS"] =  "Anti-PL-7";
+replaceArray["PL-12 AUTO ABS"] = "Anti-PL-12";
+replaceArray["MI-2 AUTO ABS"] = "Anti-Mi-2";
+replaceArray["KU AUTO ABS"] = "Anti-Ku";
+replaceArray["EJ AUTO ABS"] = "Anti-EJ";
+replaceArray["OJ AUTO ABS"] = "Anti-OJ";
+replaceArray["SRP AUTO ABS"] = "Anti-SRP";
+replaceArray["JO-1 AUTO ABS"] = "Anti-Jo-1";
+replaceArray["ANTI-SM"] = "Anti-Sm";
+replaceArray["ANTI-RNP"] = "Anti-RNP";
+replaceArray["ANTI-SSA"] = "Anti-SSA";
+replaceArray["ANTI-SSB"] = "Anti-SSB";
+replaceArray["ANTI DNA,DOUBLE-STRANDED"] = "Anti-dsDNA";
+replaceArray["ANA INTERPRETATION"] = "ANA interp";
+replaceArray["ANA TEST REMARKS"] = "ANA test remark";
+replaceArray["antiCCP"] = "Anti-CCP";
+replaceArray["HU,YO,RI AB'S W/ RFLX"] = "Anti-Hu,Yo,Ri";
+replaceArray["RIBOSOMAL P AB"] = "Anti-Ribosomal P";
+replaceArray["ANTI-HISTONE ANTIBODIES"] = "Anti-Histone";
+replaceArray["ANTI-PROTEINASE-3 ANTIBODY"] = "Anti-PR3";
+replaceArray["ANTI-MYELOPEROXIDASE"] = "Anti-MPO";
+
+//Micro
+replaceArray["MRSA SURVL NARES AGAR"] = "MRSA DNA";
+replaceArray["MRSA SURVL NARES DNA"] = "MRSA DNA";
+replaceArray["HSV IGM AB SCREEN"] = "HSV IgM Screen";
+replaceArray["HSV IGM AB TITER"] = "HSV IgM Titer";
+replaceArray["RUBELLA AB"] = "Rubella Ab";
+replaceArray["MUMPS AB SCREEN"] = "Mumps Ab Screen";
+replaceArray["MEASLES-RUBEOLA Ab"] = "Measles Ab";
+replaceArray["VARICELLA ZOSTER(VZ) IGG"] = "VZV IgG";
+replaceArray["MONO TEST"] = "Mono Test";
+replaceArray["VIRAL CAPSID IgG ANTIBODY"] = "EBV Capsid IgG";
+replaceArray["VIRAL CAPSID IgM ANTIBODY"] = "EBV Capsid IgM";
+replaceArray["ENBA"] = "EBV Nuc Ag";
+replaceArray["WNV IGG,CSF"] = "WNV IgG CSF";
+replaceArray["WNV IGM,CSSF"] = "WNV IgM CSF";
+replaceArray["ENTEROVIRUS RNA, PCR"] = "Enterovirus PCR";
+replaceArray["PARECHOVIRUS RNA, PCR"] = "Parechovirus PCR";
+replaceArray["LYME IGG AB,CSF"] = "Lyme IgG CSF";
+replaceArray["LYME IGM AB,CSF"] = "Lyme IgM CSF";
+replaceArray["Zvdrl (D/C)"] = "VDRL";
+replaceArray["GONORRHOEAE PCR"] = "Gonorrhea PCR";
+replaceArray["M.PNEUMONIAE AB IGG"] = "M. pneumoniae IgG";
+replaceArray["M.PNEUMONIAE AB IGM"] = "M. pneumoniae IgM";
+replaceArray["HIV AB/ P24 AG COMBO"] = "HIV Ab/Ag Screen";
+replaceArray["HIV-RNA,DETECTION"] = "HIV PCR Screen";
+replaceArray["HIV-RNA,COPIES"] = "HIV Qnt";
+replaceArray["HIV-RNA,LOG 10"] = "HIV Log10";
+replaceArray["HIV-RNA PCR(DC'D 7-31-08)"] = "HIV PCR";
+replaceArray["HEPATITIS A AB IGG"] = "Hep A IgG";
+replaceArray["HEPATITIS A AB IGM"] = "Hep A IgM";
+replaceArray["HAV TOT"] = "Hep A IgG/IgM";
+replaceArray["HEP B SURF AG"] = "Hep B Surf Ag";
+replaceArray["HEP B SURF AB"] = "Hep B Surf Ab";
+replaceArray["HEP B CORE AB IgM"] = "Hep B Core IgM";
+replaceArray["HEP B CORE,TOTAL"]= "Hep B Core, Total";
+replaceArray["ZZHCV-PCR"] = "HCV PCR";
+replaceArray["HCV-RNA,QNT"] = "HCV Qnt";
+replaceArray["HCV-RNA,QNT(Log10)"] = "HCV Log10";
+replaceArray["HCV-RNA,DETECTION"] = "HCV PCR Screen";
+replaceArray["HEPATITIS C Ab"] = "HCV Ab";
+replaceArray["HCVQNT"] = "HCV Qnt";
+replaceArray["HIV GENOTYPE(DC'd 1-12-06)"] = "HCV Genotype";
+replaceArray["HPSAG"] = "H. Pylori Ag";
+replaceArray["TOXOPLASMA AB IGG"] = "Toxo IgG";
+replaceArray["TOXOPLASMA AB IGM"] = "Toxo IgM";
+replaceArray["Rpr (Syphilis)"] = "RPR";
+replaceArray["BABESIA SMEAR"] = "Babesia smear";
+replaceArray["EHRLICHIA SMEAR"] = "Ehrlichia smear";
+replaceArray["LYME AB,SERUM"] = "Lyme ELISA";
+replaceArray["LYME WEST. BLOT IGG"] = "Lyme IgG (Western)";
+replaceArray["LYME WEST. BLOT IGM"] = "Lyme IgM (Western)";
+replaceArray["LEGIONELLA ANTIGEN,URINE"] = "Legionella Ag";
+replaceArray["CMV AB SCREEN(pre 8-17-04)"] = "CMV AB Screen";
+replaceArray["CHLAMYDIA PCR"] = "Chlamydia PCR";
+replaceArray["GONORRHOEAE PCR(COBAS COLLECTION KIT)"] = "Gonorrhoeae PCR";
+replaceArray["N.GON"] = "Gonorrhoeae PCR";
+replaceArray["QUANTIFERON-TB GOLD"] = "TB Quant Gold";
+replaceArray["QF-NIL"] = "Quant Nil";
+replaceArray["QF-MITOGEN-NIL"] = "Quant Mitogen Nil";
+replaceArray["QF-TB-NIL"] = "Quant TB Nil";
+replaceArray["QUANTIFERON(DC'D 4/22/14)"] = "TB Quant Gold";
+replaceArray["RESPIRATORY SCREEN"] = "Resp Screen";
+replaceArray["HCV GENOTYPE"] = "HCV Genotype";
+replaceArray["CMV TITER(pre 8-17-04)"] = "CMV titer";
+replaceArray["VDRL,CSF (WROX)"] = "VDRL";
+replaceArray["CMV DNA,QUAL,PCR(CSF)"] = "CMV PCR";
+replaceArray["EBV DNA,QN"] = "EBV PCR";
+replaceArray["CRYPTOCOCCUS AG"] = "Crypto Ag";
+replaceArray["HBV-DNA,DETECTION"] = "HBV DNA";
+replaceArray["SYPHILIS ABs W/REFLEX"] = "Syphilis AB";
+replaceArray["S.PNEUMO AG,URINE"] = "S. pneumo Ag";
+replaceArray["C DIFF TOX B GENE PCR"] = "C Diff Tox B PCR";
+replaceArray["LYME AB,SERUM(DC'D 9/27/16)"] ="Lyme Ab";
+replaceArray["HEPATITIS Be Ag"] = "Hep B Ag";
+replaceArray["HEPATITIS Be Ab"] = "Hep B Ab";
+replaceArray["GIARDIA AG"] = "Giardia Ag";
+replaceArray["CRYPTOSPORIDIUM AG"] = "Cryptosporidium Ag";
+replaceArray["HBV B DNA,COPIES"] = "HBV DNA Copies";
+replaceArray["HBV B DNA,UNITS"] = "HBV DNA Log";
+replaceArray["COCCIDIOIDES CF,SERUM"] = "Coccidioides CF";
+replaceArray["HISTOPLASMA AG"] = "Histoplasma Ag";
+replaceArray["HISTOPLAS,SPECIMEN"] = "Histo Specimen";
+replaceArray["HISTOPLASMA,INTERP"] = "Histo Interp";
+replaceArray["ANAPLASMA PCR"] = "Anaplasma PCR";
+replaceArray["ANAPLASMA SMEAR"] = "Anaplasma Smear";
+replaceArray["B.HENSELAE IGG SCR"] = "B.Henselae IgG";
+replaceArray["B.HENSELAE IGM SCR"] = "B.Henselae IgM";
+replaceArray["Q-FEVER IGG PH1 SCR"] = "Q-Fever IgG Ph1";
+replaceArray["Q-FEVER IGM PH1 SCR"] = "Q-Fever IgM Ph1";
+replaceArray["Q-FEVER IGG PH2 SCR"] = "Q-Fever IgG Ph2";
+replaceArray["Q-FEVER IGM PH2 SCR"] = "Q-Fever IgM Ph2";
+replaceArray["BRUCELLA IGG"] = "Brucella IgG"; 
+replaceArray["BRUCELLA IGM"] = "Brucella IgM";
+replaceArray["HISTOPLASMA AB (ID)"] = "Histoplasma Ab";
+
+//Drug/Tox Levels
+replaceArray["VANCOMYCIN,PEAK"] = "Vancomycin, peak";
+replaceArray["PHENYTOIN"] = "Phenytoin";
+replaceArray["CARBAMAZEPINE"] = "Carbamazepine";
+replaceArray["VALPROIC ACID"] = "Valproic acid";
+replaceArray["VANCOMYCIN,TROUGH"] = "Vanc trough";
+replaceArray["VANCOMYCIN (TROUGH)"]  = "Vanc trough";
+replaceArray["TRICYCLIC SCREEN"] = "TCA Screen";
+replaceArray["TRICYCL"] = "TCA Screen";
+replaceArray["ETHANOL"] = "ETOH";
+replaceArray["ACETAMINOPHEN"] = "Acetaminophen";
+replaceArray["SALICYLATE"] = "Salicylate";
+replaceArray["CYCLOSPORINE"] = "Cyclosporine";
+replaceArray["MARIJUANA,SERUM"] = "Marijuana";
+replaceArray["AMPHETAMINE,SERUM"] = "Amphetamine";
+
+replaceArray["AMPHETAMINE SCRN"] = "AMPHETAMINES SCREEN";
+replaceArray["BENZODIAZEPINES SCREEN"] = "BENZODIAZEPI SCREEN";
+replaceArray["CANNABINOID SCRN"] = "CANNABINOIDS SCREEN";
+
+
+replaceArray["BARBITURATE,SERUM"] = "Barbiturate";
+replaceArray["BDZ,SERUM"] = "BZD";
+replaceArray["COCAINE,SERUM"] = "Cocaine";
+replaceArray["PHENCYCLIDINE,SERUM"] = "PCP";
+replaceArray["OPIATES,SERUM"] = "Opiates";
+replaceArray["METHADONE,SERUM"] = "Methadone";
+replaceArray["PROPOXYPHENE,SERUM"] = "Propoxyphene";
+replaceArray["DIGOXIN"] = "Digoxin";
+replaceArray["GENTAMICIN"] = "Gentamicin";
+replaceArray["FK506-RENAL-QUEST"] = "Tacrolimus";
+replaceArray["LAMOTRIGINE"] = "Lamotrigine";
+replaceArray["LITHIUM"] = "Lithium";
+replaceArray["VANCOMYCIN,RANDOM"] = "Vancomycin (random)";
+replaceArray["METHANOL(YALE)"] = "Methanol";
+replaceArray["ACETONE(YALE)"] = "Acetone";
+replaceArray["ETHANOL(YALE)"] = "Ethanol";
+replaceArray["ISOPROPANOL(YALE)"] = "Isopropanol";
+replaceArray["ETHYLENE GLYCOL"] = "Ethylene glycol";
+replaceArray["PROPYLENE GLYCOL"] = "Propylene glycol";
+replaceArray["FENT,SCREEN"] = "Fent screen";
+replaceArray["ETHYL GLUCURONIDE SCRN"] = "Ethyl Glucuronide";
+replaceArray["ETHYL GLUCURONIDE(wrj)"] = "Ethyl Glucuronide";
+replaceArray["LEVETIRACETAM"] = "Keppra";
+replaceArray["SPECIFIC GRAVITY DAU"] = "SPECIFIC GRAVITY"
+
+//SMEAR
+replaceArray["PLT (ESTM)"] = "PLT (Estm)";
+replaceArray["ANISOCYTOSIS"] = "Anisocytosis";
+replaceArray["POIKILOCYTOSIS"] = "Poikilocytosis";
+replaceArray["OVALOCYTES"] = "Ovalocytes";
+replaceArray["ACANTHOCYTES"] = "Acanthocytes";
+replaceArray["TEARDROPS"] = "Teardrops";
+replaceArray["TARGET CELLS"] = "Target cells";
+replaceArray["POLYCHROMASIA"] = "Polychromasia";
+replaceArray["HYPOCHROMIA"] = "Hypochromia";
+replaceArray["NORMOCHROMIC"] = "Normochromic";
+replaceArray["BASOPHILIC STIPPLING"] = "Basophilic stippling";
+replaceArray["TOXIC GRANULATION"] = "Toxic granulation";
+replaceArray["SCHISTOCYTES"] = "Schistocytes";
+replaceArray["SPHEROCYTES"] = "Spherocytes";
+replaceArray["STOMATOCYTES"] = "Stomatocytes";
+replaceArray["MICROCYTOSIS"] = "Microcytosis";
+replaceArray["MACROCYTOSIS"] = "Macrocytosis";
+replaceArray["NORMOCYTIC"] = "Normocytic";
+replaceArray["ATYPICAL LYMPHS"] = "Atypical Lymphs";
+replaceArray["METAMYELOCYTES"] = "Metamyelocytes";
+replaceArray["MYELOCYTES"] = "Myelocytes";
+replaceArray["PROMYELOCYTES"] = "Promyelocytes";
+replaceArray["BLASTS"] = "Blasts";
+
+replaceArray["NEUT %"] = "PMN";
+replaceArray["SEGS"] = "PMN";
+replaceArray["LYMPH %"] = "Lymph";
+replaceArray["LYMPHS"] = "Lymph";
+replaceArray["MONO %"] = "Mono";
+replaceArray["MONOS"] = "Mono";
+replaceArray["EOSIN %"] = "Eos";
+replaceArray["EOSINOPHILS"] = "Eos";
+replaceArray["BASO %"] = "Baso";
+replaceArray["BASOPHILS"] = "Baso";
+replaceArray["IMMATURE GRAN %"] = "Bands";
+replaceArray["BANDS"] = "Bands";
+replaceArray["OTHER"] = "Other"
+replaceArray["SMUDGE CELLS"] = "Smudge cells"
+replaceArray["ATYPICAL MONOCYTES"] = "Atypical Monocytes";
+var smearList = ["PLT (Estm)","Anisocytosis","Poikilocytosis","Ovalocytes","Acanthocytes","Teardrops","Target cells","Smudge cells","Polychromasia","Hypochromia","Normochromic","Basophilic stippling","Toxic granulation","Schistocytes","Spherocytes","Stomatocytes","Microcytosis","Macrocytosis","Normocytic","Atypical Lymphs","Atypical Monocytes","Metamyelocytes","Myelocytes","Promyelocytes","Blasts","Other"];
+
+//Other
+replaceArray["OCCULT BLOOD(X1)(WARD)"] = "FOBTx1";
+replaceArray["GLUCOSE,RANDOM"] = "Glucose";
+replaceArray["APPEARANCE"] = "Appearance";
+replaceArray["PH,FLUID"] = "pH";
+replaceArray["PROTEIN,TOTAL"]="Protein";
+replaceArray["COLOR"] = "Color";
+replaceArray["NUCLEATED CELLS"] = "Nucleated cells";
+replaceArray["MACROPHAGES"] = "Macrophages";
+replaceArray["MESOTHELIAL CELLS"] = "Mesothelial cells";
+replaceArray["OCCULT BLOOD #1"] = "FOBT #1";
+replaceArray["OCCULT BLOOD #2"] = "FOBT #2";
+replaceArray["OCCULT BLOOD #3"] = "FOBT #3";
+replaceArray["TISSUE CELLS"] = "Tissue Cells";
+replaceArray["PROTEIN,CSF"] = "CSF Protein";
+replaceArray["WBC-BODY FLUID (WBC-BF)"] = "WBC";
+replaceArray["RBC-BODY FLUID (RBC-BF)"] = "RBC";
+replaceArray["MONONUCLEATED CELLS(MN)"] = "MN";
+replaceArray["PMN-BF"] = "PMN";
+replaceArray["TNC-BF"] = "Nucleated cells";
+replaceArray["FECAL WBC'S (DC'D 9-28-11)"] = "Fecal WBC";
+replaceArray["FAT,STOOL(QUAL)"] = "Fecal fat";
+replaceArray["CSF OLIGOCLONAL BANDS"] = "Oligoclonal bands";
+replaceArray["SERUM ALBUMIN"] = "Serum Albumin";
+replaceArray["CSF ALBUMIN"] = "CSF Albumin";
+replaceArray["SERUM IgG"] = "Serum IgG";
+replaceArray["ACHRbin"] = "AChR Binding Ab";
+replaceArray["PLAVIX RESISTANCE TEST"] = "Plavix Resistance";
+replaceArray["MARKERS ASSAYED"] = "Markers Assayed";
+replaceArray["GATE CORRECTED"] = "Gate Corrected";
+replaceArray["OTHER CELLS"] = "Other cells";
+replaceArray["ALPHA-1-ANTITRYPSIN,FECES"] = "A1-Antitrypsin";
+replaceArray["NOROVIRUS PCR (YALE)"] = "Norovirus PCR";
+replaceArray["FENTANYL SCREEN,URINE"] = "FENTANYL SCREEN";
+replaceArray["FENTANYL"] = "FENTANYL SCREEN";
+//Blood gas:
+replaceArray["pH(POC)"] = "PH";
+replaceArray["pCO2(POC)"] = "PCO2";
+replaceArray["pO2(POC)"] = "PO2";
+replaceArray["BICARBONATE"] = "HCO3";
+replaceArray["HCO3(POC)"] = "HCO3";
+replaceArray["HGB(POC)"] = "HGB POC";
+replaceArray["Na(POC)"] = "Na POC";
+replaceArray["K(POC)"] = "K POC";
+replaceArray["Ca++(POC)"] = "Ca++ POC";
+replaceArray["BASE EXCESS(POC)"] = "Base Excess POC";
+replaceArray["CL(POC)"] = "CHLORIDE";
+replaceArray["CREATININE(POC)"] = "CREATININE,SERUM";
+replaceArray["BUN(POC)"] = "UREA NITROGEN";
+replaceArray["GLUCOSE(ISTAT POC)"] = "Glucose";
+replaceArray["ANION GAP(POC)"] = "ANION GAP";
+
+
+
+
+
+var listTrends = ["CBC","Diff","Smear", "Chem","Cardiac","Iron","Liver","Coags","Lipid-a1c","Glucose","UA","UDS","ABG"];
+var listElements = [["WBC","HGB","HCT","PLT","MCV"],["PMN", "Lymph", "Mono", "Eos", "Baso","Bands","Promyelocytes","Myelocytes","Metamyelocytes","Blasts"],["SMEAR"],["SODIUM","POTASSIUM","CHLORIDE","CO2","ANION GAP","UREA NITROGEN","Creatinine","Calcium","Mag","Phos"],["Trop I","CK-MB","CK","BNP"],["Iron","TIBC","Iron sat","Ferritin"],["AST","ALT","ALK","TBil","DBil","Albumin","Protein","Ammonia"],["PT","INR","PTT","Fibrinogen","D-dimer"],["A1c","Spot Albumin/Cr ratio","CHOL","LDL","LDL,DIRECT","HDL","TG","VLDL"],["Glucose"],["SPECIFIC GRAVITY","URINE pH","URINE BLOOD","LEUKOCYTE ESTERASE","NITRITE, URINE","URINE PROTEIN","URINE GLUCOSE","URINE KETONES","URINE BILIRUBIN", "UROBILINOGEN"],["AMPHETAMINES SCREEN","BARBITURATES SCREEN","BENZODIAZEPI SCREEN","CANNABINOIDS SCREEN","COCAINE SCREEN","OPIATES SCREEN","METHADONE SCREEN","OXYCODONE SCREEN","BUPRENORPHINE SCREEN","FENTANYL SCREEN","Ethyl Glucuronide"],["ABG"]];
+var listNames = [["WBC","HGB","HCT","PLT","MCV"],["PMN", "Lymph", "Mono", "Eos", "Baso","Bands","Promy","Myelo","Metam","Blast"],["SMEAR"],["Na","K","Cl","CO2","AG","BUN","Cr","Ca","Mg","PO4"],["Troponin I","CK-MB","CPK","BNP"],["Iron","TIBC","TSat","Ferritin"],["AST","ALT","AlkP","TBil","DBil","Alb","Prtn","NH4"],["PT","INR","PTT","Fibrinogen","D-dimer"],["A1c","Alb/Cr","Chol","LDL    ","LDL Direct", "HDL","TG", "VLDL"],["Glucose"],["SG","pH","Blood","LE","Nitr","Prtn","Gluc","Keto","Bili", "Urobi"],["AMP","BAR","BZD","CBD","COC","OPI","MTD","OXY","BUP","FEN","ETG"],["ABG"]];
+var listTrendSpecimens = ["||BLOOD||","||BLOOD||","||BLOOD||","||SERUM||PLASMA||","||SERUM||PLASMA||BLOOD||","||SERUM||PLASMA||BLOOD||","||SERUM||PLASMA||BLOOD||","||SERUM||PLASMA||BLOOD||","||SERUM||PLASMA||BLOOD||URINE||","||SERUM||PLASMA||BLOOD||","||URINE||","||URINE||","||ARTERIAL BLOOD||"];
+
+var listMedID = new Array();
+
+function loadFunction()
+{
+	document.execCommand("AutoUrlDetect", false, false);
+	var ttHTML = "<tr><td>Trend:</td><td>Single</td><td>Week</td><td>&nbsp;All</td></tr>";
+
+	for(var i = 0; i < listTrends.length; i++)
+	{
+		ttHTML += "<tr>";
+		ttHTML += "<td>" + listTrends[i] + "</td><td>";
+		ttHTML += "<input title ='Single " + listTrends[i] + "' onclick='ff()' type='radio' id='" + listTrends[i] + "single' name='" + listTrends[i] + "' checked></td><td>";
+		ttHTML += "<input title ='Week " + listTrends[i] + "' onclick='ff()' type='radio' id='" + listTrends[i] + "week' name='" + listTrends[i] + "'></td><td>"
+		ttHTML += "<input title ='All " + listTrends[i] + "' onclick='ff()' type='radio' id='" + listTrends[i] + "all'  name='" + listTrends[i] + "'></td>"; 
+		ttHTML += "</tr>";
+	}
+	ttHTML += "<tr><td>Changes</td><td><input onclick ='ff()' type='radio' id='viewchangessingle' name='viewchange' checked></td><td>";
+	ttHTML += "<input onclick ='ff()' type='radio' id='viewchangesweek' name='viewchange' ></td><td>";
+	ttHTML += "<input onclick ='ff()' type='radio' id='viewchangesall' name='viewchange'></td>";
+	ttHTML += "</tr>";
+	trendTable.innerHTML = ttHTML;
+}
+function generateTrendText(tE)
+{
+	var ttHTML = "";
+	if(listTrends.indexOf(tE) != -1)
+	{
+		var num = 0;		
+		if(document.getElementById(tE + "week").checked)
+			num = 1;
+		if(document.getElementById(tE + "all").checked)
+			num = 2;
+		if(num != 0)
+		{
+			var index = listTrends.indexOf(tE);
+			var ne = listElements[index].length;
+			var someTrue = false;
+			for(var i = 0; i < ne; i++)
+			{
+				if(listElements[index][i] in listTime)
+					someTrue = true;
+			}
+			if(!someTrue)
+				return "";
+			ttHTML += "\n";
+			for(var i = 0; i < ne; i++)
+			{
+				if(listElements[index][i] in listTime)
+				{
+					ttHTML += listNames[index][i];
+					if(i != ne - 1 && listTrends[index] != "UDS")
+						ttHTML += replicate(" ",Math.max(6,listNames[index][i].length + 1) - listNames[index][i].length);
+					if(i != ne - 1 && listTrends[index] == "UDS")
+						ttHTML += replicate(" ",Math.max(5,listNames[index][i].length + 1) - listNames[index][i].length);
+				}
+			}
+			//need to select specimens in chronologic order:
+			
+			ttHTML += "\n" + replicate("=",blankLength) + "\n";
+			var listTrendTimes = [];
+			for(var i = 0; i < ne; i++)
+			{
+				var curE = listElements[index][i];
+				if(curE in listTime)
+				{
+					for(var j = 0; j < listTime[curE].length; j++)
+					{
+						if(listTrendSpecimens[index].indexOf("||" + listSpecimen[curE][j] + "||") != -1 && (listTrendTimes.indexOf(timeToDate(listTime[curE][j])) == -1))
+						{
+							if(num == 2 || timeToDate(listTime[curE][j]) > Date.now() - 7*msDay)
+								listTrendTimes.push(timeToDate(listTime[curE][j]));
+						}
+					}
+				}
+			}
+			if(listTrendTimes.length == 0)
+				return "";
+			listTrendTimes.sort(function(a,b){return b-a});
+			if(listTrends[index] == "Glucose")
+			{
+				listGlucose = new Array(listTrendTimes.length);
+				for(var i = 0; i < listTrendTimes.length; i++)
+				{
+					for(var j = 0; j < listTime["Glucose"].length; j++)
+					{
+						if(listTrendSpecimens[index].indexOf("||" + listSpecimen["Glucose"][j] + "||") != -1 && listTrendTimes[i] == timeToDate(listTime["Glucose"][j]))
+						{
+							listGlucose[i] = listVals["Glucose"][j];
+							listGlucose[i] += replicate(" ", 3 - listGlucose[i].length);
+							if(listCrit["Glucose"][i] != "N")
+								listGlucose[i] = "<span style='color: red; font-weight: bold'>" + listGlucose[i] + "</span>";
+						}
+					}
+				}
+				for(var i = 0; i < listTrendTimes.length; i++)
+				{
+					var curString = "";
+					curString += listGlucose[i] + " " + msToMH(listTrendTimes[i]) + "";
+					var j = i + 1;
+					var exitLoop = false;
+					while(!exitLoop)
+					{
+						if(j == listTrendTimes.length)
+						{ 
+							exitLoop = true;
+						} else
+						{
+							if(!compareDay(listTrendTimes[i],listTrendTimes[j]))
+							{
+								exitLoop = true;
+							} else
+							{
+								var c2s = "   ";
+								c2s += listGlucose[j] + " " + msToMH(listTrendTimes[j]) + "";
+								if(replaceTags(curString + c2s).length < blankLength)
+								{
+									curString += c2s;
+									j++;
+								} else
+								{
+									exitLoop = true;
+								}
+							}
+						}
+					}
+					ttHTML += curString + " @ " + msToDay(listTrendTimes[i]) + "\n";
+					i = j - 1;
+				}
+			} else
+			{
+				for(var i = 0; i < listTrendTimes.length; i++)
+				{
+					var curString = "";
+					for(var j = 0; j < ne; j++)
+					{
+						var found = false;
+						var curE = listElements[index][j];
+						if(curE in listTime)
+						{
+							for(var k = 0; k < listTime[curE].length; k++)
+							{
+								if(!found && listTrendSpecimens[index].indexOf("||" + listSpecimen[curE][k] + "||") != -1 && listTrendTimes[i] == timeToDate(listTime[curE][k]))
+								{
+									found = true;
+									var pre = "";
+									var post = "";
+									if(listCrit[curE][k] != "N")
+									{
+										pre = "<span style='color: red; font-weight: bold'>";
+										post = "</span>";
+									}
+									var listCont = listVals[curE][k];
+									if(listCont == "comment")
+										listCont = "***";
+									if(listTrends[index] == "UA")
+									{
+										if(listCont == "NEGATIVE" || listCont == "Neg." || listCont == "none" || listCont == "Neg")
+										{
+											listCont = "-";
+										} else
+										{
+											if(listCont == "POSITIVE")
+												listCont = "+";
+										}
+									}
+									if(listTrends[index] == "UDS")
+									{
+										if(listCont.toLowerCase() == "none" || listCont.toLowerCase() == "neg" || listCont.toLowerCase() == "none-detected" || listCont.toLowerCase().includes("negative"))
+										{
+											listCont = "-";
+										} else
+										{
+											listCont = "<span style='color: red; font-weight: bold'>+</span>";
+										}
+										curString += pre + listCont + post + replicate(" ",Math.max(5,listNames[index][j].length + 1) - replaceTags(listCont).length);
+									} else
+									{
+										curString += pre + listCont + post + replicate(" ",Math.max(6,listNames[index][j].length + 1) - replaceTags(listCont).length);
+									}
+								}
+							}
+							if(!found)
+              {
+                if(listTrends[index] == "UDS")
+                {
+                  curString += replicate(" ",Math.max(5,listNames[index][j].length + 1));
+                } else 
+                {
+                  curString += replicate(" ",Math.max(6,listNames[index][j].length + 1));
+                }
+              }
+						}
+					}
+					ttHTML += curString + " @ " + msToDate(listTrendTimes[i]) + "\n";
+				}
+			}
+		}
+	}
+	return ttHTML;
+}
+
+
+
+Array.prototype.remove = function(from, to) {
+  var rest = this.slice((to || from) + 1 || this.length);
+  this.length = from < 0 ? this.length + from : from;
+  return this.push.apply(this, rest);
+};
+
+if (!Array.prototype.filter)
+{
+  Array.prototype.filter = function(fun /*, thisp*/)
+  {
+    var len = this.length;
+    if (typeof fun != "function")
+      throw new TypeError();
+    var res = new Array();
+    var thisp = arguments[1];
+    for (var i = 0; i < len; i++)
+    {
+      if (i in this)
+      {
+        var val = this[i]; // in case fun mutates this
+        if (fun.call(thisp, val, i, this))
+          res.push(val);
+      }
+    }
+    return res;
+  };
+}
+
+function opf()
+{
+    edtData.innerText = "";
+    setTimeout(function()
+    {
+		fs();
+		fr();
+		ff();
+		clipb.value = "";
+    });
+}
+
+function msToDate(ts)
+{
+	var td = new Date(ts);
+	var retSt = (td.getMonth()+1) + "/" + td.getDate() + "/" + td.getFullYear()+ " "; 
+	if(td.getHours() < 10)
+		retSt += "0";
+	retSt += td.getHours() + ":";
+	if(td.getMinutes() < 10)
+		retSt += "0";
+	return retSt + td.getMinutes();
+}
+
+function compareDay(ta, tb)
+{
+	var tda = new Date(ta);
+	var tdb = new Date(tb);
+	if(tda.getMonth() == tdb.getMonth() && tda.getDate() == tdb.getDate() && tda.getFullYear() == tdb.getFullYear())
+		return true;
+	return false;
+}
+
+function msToDay(ts)
+{
+	var td = new Date(ts);
+	var retSt = (td.getMonth()+1) + "/" + td.getDate() + "/" + td.getFullYear(); 
+	return retSt;
+}
+function msToMH(ts)
+{
+	var td = new Date(ts);
+	retSt = "";
+	if(td.getHours() < 10)
+		retSt += "0";
+	retSt += td.getHours() + ":";
+	if(td.getMinutes() < 10)
+		retSt += "0";
+	return retSt + td.getMinutes();
+}
+
+function inRange(a,b,c) //returns true if a and b are within c days of each other
+{
+	if(a - b < c*86400000 && b - a < c*86400000)
+		return true;
+	return false;
+}
+
+function timeToDate(curTime)
+{
+	return Date.parse(curTime.replace("@"," "));
+}
+
+function getMaxima(lab, date, range)
+{
+	var maxIndex = 0;
+	for(var i = 0; i < listVals[lab].length; i++)
+	{
+		if(inRange(date, timeToDate(listTime[lab][i]), range))
+		{
+			if(listVals[lab][i] > listVals[lab][maxIndex])
+			{
+				maxIndex = i;
+			}
+		}
+	}
+	return maxIndex;
+}
+
+function getMinima(lab, date, range)
+{
+	var minIndex = 0;
+	for(var i = 0; i < listVals[lab].length; i++)
+	{
+		if(inRange(date, timeToDate(listTime[lab][i]), range))
+		{
+			if(listVals[lab][i] < listVals[lab][minIndex])
+			{
+				minIndex = i;
+			}
+		}
+	}
+	return minIndex;
+}
+
+//Given a specimen and date, get the index for the lab as a list
+function getIndex(labs, date, spec)
+{
+	var retList = new Array();
+	for(var i = 0; i < labs.length; i++)
+	{
+		var retVal = -1;
+		if(labs[i] in listTime)
+		{
+			for(var j = 0; j < listTime[labs[i]].length; j++)
+			{
+				if(listSpecimen[labs[i]][j] == spec && listTime[labs[i]][j] == date)
+				{
+					retVal = j;
+				}
+			}
+		}
+		retList[labs[i]] = retVal;
+	}	
+	return retList;
+}
+
+function getNTime(labs, spec, n)
+{
+	var timeList = new Array();
+	for(var i = 0; i < labs.length; i++)
+	{
+		if(labs[i] in listTime)
+		{
+			for(var j = 0; j < listTime[labs[i]].length; j++)
+			{
+				if(listSpecimen[labs[i]][j] == spec)
+				{
+					var pos = timeList.length;
+					for(var k = 0; k < timeList.length; k++)
+					{
+						if(timeList[k] == listTime[labs[i]][j])
+						{
+							pos = -1;
+							k = timeList.length;
+						} else if(timeToDate(timeList[k]) < timeToDate(listTime[labs[i]][j]))
+						{
+							pos = k;
+						}
+					}
+					if (pos != -1)
+						timeList.splice(pos,0,listTime[labs[i]][j]);							
+				}
+			}
+		}
+	}
+	if(timeList.length > n)
+		return timeList[n];
+	return -1;
+}
+
+function getClosestIndex()
+{
+}
+
+function pgetValList(listVals, lab, index, blank)
+{
+	var prefix = "";
+	var postfix = "";
+	var ll = lab.split("||");
+	var ml = -1;
+	for(var i = 0; i < ll.length; i++)
+	{
+		if(index[ll[i]] != -1)
+		{
+			ml = i;
+		}
+	}
+	if(ml == -1)
+	{
+		return blank;
+	}
+	var rI = index[ll[ml]];
+	if(listCrit[ll[ml]][rI] != "N")
+	{
+		prefix += "<span style='color: red; font-weight: bold'>";
+		postfix += "</span>";
+	}
+	return prefix + pad(listVals[ll[ml]][rI],5) + postfix;
+}
+
+function getValList(listVals, lab, index, blank, prefix, postfix, mustbe)
+{
+	if(!prefix)
+		var prefix = "";
+	if(!postfix)
+		var postfix = "";
+	var ll = lab.split("||");
+	var ml = -1;
+	for(var i = 0; i < ll.length; i++)
+	{
+		if(index[ll[i]] != -1)
+		{
+			ml = i;
+		}
+	}
+	if(ml == -1)
+	{
+		return blank;
+	}
+	var rI = index[ll[ml]];
+	if(mustbe)
+	{
+		if(listCrit[ll[ml]][rI] == "N")
+			return blank;
+	}
+	return prefix + listVals[ll[ml]][rI] + postfix;
+}
+function getComment(listComment, lab, index, blank)
+{
+	var ll = lab.split("||");
+	var ml = -1;
+	for(var i = 0; i < ll.length; i++)
+	{
+		if(index[ll[i]] != -1)
+		{
+			ml = i;
+		}
+	}
+	if(ml == -1)
+	{
+		return blank;
+	}
+	var rI = index[ll[ml]];
+	return listComment[ll[ml]][rI];
+}
+function getValListT(listVals, lab, index, blank, prefix, postfix, mustbe)
+{
+	if(!prefix)
+		var prefix = "";
+	if(!postfix)
+		var postfix = "";
+	var ll = lab.split("||");
+	var ml = -1;
+	for(var i = 0; i < ll.length; i++)
+	{
+		if(index[ll[i]] != -1)
+		{
+			ml = i;
+		}
+	}
+	if(ml == -1)
+	{
+		return blank;
+	}
+	var rI = index[ll[ml]];
+	if(mustbe)
+	{
+		if(listCrit[ll[ml]][rI] == "N")
+			return blank;
+	}
+	if(listCrit[ll[ml]][rI] != "N")
+	{
+		prefix += "<span style='color: red; font-weight: bold'>";
+		postfix += "</span>";
+	}
+	return prefix + listVals[ll[ml]][rI] + postfix;
+}
+function getSingleValue(listVals, listTime, listSpecimen, lab, prefix)
+{
+	var valList = [lab];
+	var t1 = getNTime(valList, "SERUM", 0);
+	var inList = getIndex(valList, t1, "SERUM");
+	return getValList(listVals, lab, inList, prefix + "*** ", prefix) + " @ " + t1;
+}
+
+function getTCV(lab, t1, specimen)
+{
+	var minDif = -1;
+	var minLoc = -1;
+	var tcv = -1;
+	if(lab in listTime)
+	{
+		for(var j = 0; j < listTime[lab].length; j++)
+		{
+			var diff = Math.abs(timeToDate(t1) - timeToDate(listTime[lab][j]));
+			if(!specimen)
+			{
+				if(minDif == -1 || diff < minDif)
+				{
+					minLoc = j;
+					minDif = diff;
+					tcv = listVals[lab][j];
+				}
+			} else
+			{
+				if((minDif == -1 || diff < minDif) && specimen.indexOf(listSpecimen[lab][j] + "||") != -1)
+				{
+					minLoc = j;
+					minDif = diff;
+					tcv = listVals[lab][j];
+				}
+			}
+		}
+	} 
+	if(tcv == -1)
+		return [-1,-1,-1];
+	return [tcv, listTime[lab][minLoc], minLoc];	
+}
+
+function timeFormat(s)
+{
+	var d = new Date(timeToDate(s));
+	var ds = (d.getMonth() +1) + "/" + d.getDate() + "/" + d.getFullYear() + " ";
+	if(d.getHours() < 10)
+		ds += "0";
+	ds += d.getHours() + ":";
+	if(d.getMinutes() < 10)
+		ds += "0";
+	return ds + d.getMinutes();
+}
+
+function valueCritRed(val, inList, name)
+{
+	if(listCrit[name][inList[name]] != "N")
+	{
+		return "<span style='color: red; font-weight: bold'>" + val + "</span>";
+	} else
+	{
+		return val;
+	}
+}
+function replaceTags(s)
+{
+	return s.replace(/\<[^>]*\>/g,"").replace(/&#060;/g," ").replace(/&#062;/g," ");
+	//return s.replace(/\<ss\>/g,"").replace(/\<\/span\>/g,"");
+}
+
+function generateText(name, prop, specimen, id)
+{
+	var trendText = "";
+	for(var j = 0; j < listVals[prop].length; j++)
+	{
+		if(listSpecimen[prop][j] === specimen)
+		{
+			var pre = "";
+			var post = "";
+			if(listCrit[prop][j] != "N")
+			{
+				pre = "<span style='color: red; font-weight: bold'>";
+				post = "</span>";
+			}
+			trendText += name + ": " + pre + listVals[prop][j] + post + " @ " + listTime[prop][j] + "\n";
+		}		
+	}
+	return "<span id = '" + id + "' style='display:none'>" + trendText + "</span>";
+}
+function odc(id)
+{
+	if(document.getElementById(id).style.display == 'none')
+	{
+		document.getElementById(id).style.display = "block";
+	} else
+	{
+		document.getElementById(id).style.display = "none";
+	}
+}
+
+function templateSpecial(lab, base)
+{
+	if(!(lab in listVals))
+	{
+		listVals[lab] = new Array();
+		listCrit[lab] = new Array();			
+		listUH[lab] = new Array();
+		listPH[lab] = new Array();
+		listTime[lab] = new Array();
+		listSpecimen[lab] = new Array();
+		listComment[lab] = new Array();
+	}
+	var i = listVals[base].length - 1;
+	listVals[lab].push(listVals[base][i]);
+	listCrit[lab].push(listCrit[base][i]);
+	listUH[lab].push(listUH[base][i]);
+	listPH[lab].push(listPH[base][i]);
+	listTime[lab].push(listTime[base][i]);
+	listSpecimen[lab].push(listSpecimen[base][i]);
+	listComment[lab].push(listComment[base][i]);
+}
+function deleteSpecial(lab)
+{
+	if(lab in listVals)
+	{
+		delete listVals[lab];
+		delete listCrit[lab];
+		delete listUH[lab];
+		delete listPH[lab];
+		delete listTime[lab];
+		delete listSpecimen[lab];
+		delete listComment[lab];
+	}
+}
+
+//Tagline can be added after property name (i.e. 24hr urine)
+function printData(prop, specimenList, tagLine)
+{
+	var minV = -1;
+	for(var j = 0; j < listVals[prop].length; j++)
+	{
+		if(minV == -1 && (specimenList.indexOf("||" + listSpecimen[prop][j] + "||") != -1 || (specimenList == "CEREBROSPINAL" && listSpecimen[prop][j].indexOf(specimenList) != -1)))
+		{
+			minV = j;
+			j = listVals[prop].length;
+		}		
+	}
+	if(minV != -1)
+	{
+		var tmpProp = prop;
+		var pf = "";
+		var pof = "";
+		if(listCrit[prop][minV] != "N" && prop != "Corrected Calcium")
+		{
+			pf = "<span style='color: red; font-weight: bold'>";
+			pof = "</span>";
+		}
+		if(prop in replaceArray)
+			tmpProp = replaceArray[prop];
+		if(tagLine)
+			tmpProp = tmpProp + " (" + tagLine + ")";
+		if(prop in listComment && listComment[prop][minV] != "")
+		{
+			if(prop == "Iron" || prop == "TIBC" || prop == "Iron sat" || prop == "Ferritin" || prop == "B12" || prop == "Serum folate" || prop == "ALT" || prop == "AST" || prop == "TBil" || prop == "DBil" || prop == "Acetaminophen" || prop == "Uric Acid" || prop == "Mag")
+			{
+				if(listComment[prop][minV].indexOf("hemolysis") != -1 && (listUH[prop][minV] == "comment" || listUH[prop][minV] == "***"))
+				{
+						return tmpProp + ": " + "<span ondblclick=\"alert('" + listComment[prop][minV] + "')\">" + "hemolyzed</span> @ " + listTime[prop][minV] + " \n";	
+				}
+			}
+			return tmpProp + ": " + "<span ondblclick=\"alert('" + listComment[prop][minV] + "')\">" + pf + listUH[prop][minV] + pof + "</span> @ " + listTime[prop][minV] + " \n";		
+		}
+		else
+		{
+			return tmpProp + ": " + pf + listUH[prop][minV] + pof + " @ " + listTime[prop][minV] + " \n";	
+		}
+		//return "<span ondblclick=\"odc('" + tmpProp + "')\">" +  tmpProp + ": " + pf + listUH[prop][minV] + pof + "</span>" + " @ " + listTime[prop][minV] + " \n";							
+	}		
+	return "";
+}
+	
+/* Main function that splits array into discrete lab elements, then generates text */
+function fs() 
+{
+	if(typeof String.prototype.trim !== 'function') {
+		String.prototype.trim = function() {
+			return this.replace(/^\s+|\s+$/g, ''); 
+		}
+	}
+    var str1 = clipb.value;
+    edtData.innerText = "";
+    vals = str1.split("\n");
+    listVals = {};
+    listCrit = {};
+    listUH = {};
+    listPH = {};
+    listTime = {};
+    listSpecimen = {};
+    listMicro = new Array();
+    listMicroSpec = new Array();
+    medList = new Array();
+	
+	var curTime = "";
+    var curSpec = "";
+    var resultTime = "";
+	var curComment = "";
+	medListOutpatient = false;
+	for (i = 0; i < vals.length; i++) 
+	{
+		var labCode = / \[([0-9]{3,4})\]/;
+		var includeList = false;
+		var vvv = labCode.exec(vals[i].replace("].","."));
+		if(vvv != null)
+			includeList = true;
+		if(!includeList && timeToDate(curTime) < Date.now() - msDay*10*365)
+		{
+			for(var p in replaceArray)
+			{
+				if(vals[i].substr(0,p.length) == p)
+					includeList = true;
+			}
+		}
+		if(includeList && vals[i].indexOf("Test Not Performed") != -1)
+			includeList = false;
+		var numCode = /([0-9]{1,2})\)/;
+		if(numCode.exec(vals[i].substr(0,3)) != null)
+		{
+			includeList = false;
+			if(vals[i].indexOf("  ACTIVE") != -1 || vals[i].indexOf("  ACTIVE (S)") != -1 || vals[i].indexOf("  PENDING") != -1)
+			{
+				medListOutpatient = true;			
+			}
+			var mL = vals[i].substr(3).replace(" ACTIVE (S)","").replace(" ACTIVE","").replace(" PENDING","").replace("Non-VA ","").trim() + " ";
+			i++;
+			while(i < vals.length && (numCode.exec(vals[i].substr(0,3)) == null))
+			{
+				if(vals[i].indexOf("Active Non-VA Medications                              Status") == -1 && vals[i].indexOf("=========================================================================") == -1)
+				{
+					mL += vals[i].trim().replace("Non-VA ","") + " ";
+				}
+				i++;
+			}
+			i--;
+			medList.push(mL);
+		}
+        if (includeList) 
+		{
+            	var temp = vals[i];
+			var tj = i;
+			while(vals[tj].substr(0,10) == "          " && tj > 0)
+			{
+				tj--;
+			}
+			temp = "";
+			while(tj <= i)
+			{
+				temp += vals[tj];
+				tj ++;
+			}
+		    if(temp.indexOf("HELICOBACTOR PYLORI AG,STOOL") != -1)
+				temp = temp.replace("HELICOBACTOR PYLORI AG,STOOL","HPSAG    ");
+			if(temp.indexOf("HCV PCR (QNT-HI) pre10-24-06") != -1)
+				temp = temp.replace("HCV PCR (QNT-HI) pre10-24-06","HCV Qnt    ");
+			if(temp.indexOf("HCV RNA RT-PCR(DC'D 3-2-09)") != -1)
+				temp = temp.replace("HCV RNA RT-PCR(DC'D 3-2-09)","HCV Qnt    ");
+			if(temp.indexOf("HERPES PCR CSF(DC'D 5/14/15)") != -1)
+				temp  = temp.replace("HERPES PCR CSF(DC'D 5/14/15)","HSV CSF PCR    ");
+			if(temp.indexOf("OCCULT BLOOD(FIT) #1 OF 1") != -1)
+				temp = temp.replace("OCCULT BLOOD(FIT) #1 OF 1", "FIT #1 of 1    ");
+			if(temp.indexOf("Rpr (Syphilis)(DC'D 6-16-17)") != -1)
+				temp = temp.replace("Rpr (Syphilis)(DC'D 6-16-17)", "RPR    ");
+			if(temp.indexOf("LYME AB,SERUM(DC'D 9/27/16)") != -1)
+				temp = temp.replace("LYME AB,SERUM(DC'D 9/27/16)", "Lyme Ab    ");
+			if(temp.indexOf("HEXAGONAL PHASE CONFIRMATION") != -1)
+				temp = temp.replace("HEXAGONAL PHASE CONFIRMATION", "Hexagonal phase confirm    ");
+            var lab = myTrim(temp.substring(0, temp.indexOf("  ")));
+            var valsearch = /\S[.A-Za-z0-9,_+:\//\-=]*/;
+		    var val = valsearch.exec(temp.substring(temp.indexOf("  ")));
+		    if(val == "<")
+		    {
+				var tempVal = temp.replace("<"," ");
+				val = "< " + valsearch.exec(tempVal.substring(temp.indexOf("  ")));
+	        } else if(val == ">")
+		    {
+				var tempVal = temp.replace(">"," ");
+				val = "> " + valsearch.exec(tempVal.substring(temp.indexOf("  ")));
+		    } else if(val == "Not" || val == "NOT")
+			{
+				var tempVal = temp.replace("Not "," ").replace("NOT "," ");
+				val = "Not " + valsearch.exec(tempVal.substring(temp.indexOf("  ")));				
+			}else if(val == "SEE" || val == "See")
+			{
+				var tempVal = temp.replace("SEE "," ").replace("See "," ");
+				val = "SEE " + valsearch.exec(tempVal.substring(temp.indexOf("  ")));				
+			} else if(val == "Non" || val == "NON")
+			{
+				var tempVal = temp.replace("Non "," ").replace("NON "," ");
+				val = "Non " + valsearch.exec(tempVal.substring(temp.indexOf("  ")));				
+			} else if(val == "OCCASIONAL" || val == "Occasional")
+			{
+				var tempVal = temp.replace("OCCASIONAL "," ").replace("Occasional "," ");
+				val = "Occasional " + valsearch.exec(tempVal.substring(temp.indexOf("  ")));				
+			} else if(val == "SLIGHT" || val == "Slight")
+			{
+				var tempVal = temp.replace("SLIGHT "," ").replace("Slight "," ");
+				val = "Slight " + valsearch.exec(tempVal.substring(temp.indexOf("  ")));				
+			} 
+			if(val == "NEGATIVE" || val == "NEG" || val == "NON-REACTIVE" || val == "negative" || val == "Non Reactive" || val == "Not Reactive" || val == "nonreactive" || val == "Nonreactive" || val == "Not DETECTED")
+			{
+				val = "Neg";
+			} else if (val == "POSITIVE" || val == "POS" || val == "REACTIVE" || val == "Reactive" || val == "DETECTED")
+			{
+				val = "Pos";
+			} else if (val == "BORDERLINE")
+			{
+				val = "Borderline";
+			} else if (val == "ADEQUATE" || val == "Adeq.")
+			{
+				val = "Adeq";
+			} else if (val == "YES")
+			{
+				val = "Yes";
+			} else if (val == "NO")
+			{
+				val = "No";
+			} else if (val == "REDUCED")
+			{
+				val = "Low";
+			}
+		    if(temp.indexOf("  ") == 0)
+		    {
+				lab = myTrim(temp.substring(0, temp.indexOf("   ")));
+				val = valsearch.exec(temp.substring(temp.indexOf("   ")));
+            }
+            val = ("" + val + "").replace(/\</g,"&#060;").replace(/\>/g,"&#062;");
+
+		    if(val == "[none")
+				val = "none";
+			if(val == "NONREPORTABLE")
+				val = "***";
+			
+			if(lab in replaceArray)
+				lab = replaceArray[lab];
+		  if(lab == "Centromere" || lab == "Peripheral" || lab == "Speckled" || lab == "Homogeneous" || lab == "Nucleolar")
+		  {
+			if(i != 0 && vals[i-1].indexOf("ANA TITER") != -1)
+			{
+				var tv = val;
+				val = lab;
+				lab = "ANA Pattern";
+				if("ANA Titer" in listVals)
+				{
+					var ind = listVals["ANA Titer"].length - 1;
+					if(listTime["ANA Titer"][ind] == curTime)
+					{
+						listVals["ANA Titer"][ind] = tv;
+						if(tv.indexOf(":") != -1 && parseInt(tv.split(":")[1]) > 40)
+						{
+							listCrit["ANA Titer"][ind] = "H";
+							listUH["ANA Titer"][ind] = tv + " H";
+						} else
+						{
+							listCrit["ANA Titer"][ind] = "N";
+							listUH["ANA Titer"][ind] = tv;
+						}
+					}
+				}
+			} else if(i !=0 && vals[i-1].indexOf("ANA") != -1)
+			{
+		  if(!("ANA Titer"  in listVals))
+		  {
+				listVals["ANA Titer"] = new Array();
+				listCrit["ANA Titer"] = new Array();			
+				listUH["ANA Titer"] = new Array();
+				listPH["ANA Titer"] = new Array();
+				listTime["ANA Titer"] = new Array();
+				listSpecimen["ANA Titer"] = new Array();
+				listComment["ANA Titer"] = new Array();
+		    }
+		    var tv = val;
+				    val = lab;
+		    lab = "ANA Pattern";
+		    listVals["ANA Titer"].push(tv);
+		    var crit = "N";
+				    if(tv.indexOf(":") != -1 && parseInt(tv.split(":")[1]) > 40)
+				    {
+					   crit = "H";
+		    } 
+	    var uh = val;
+	    if(crit != "N")
+		    uh += " " + crit;
+	    listCrit["ANA Titer"].push(crit);
+	    listUH["ANA Titer"].push(uh);
+	    var ph = val + "%";
+	    if(crit != "N")
+		   ph += " " + crit;   
+	    listPH["ANA Titer"].push(ph); 
+         listTime["ANA Titer"].push(curTime);
+		    		    listSpecimen["ANA Titer"].push(curSpec);
+	    listComment["ANA Titer"].push(curComment);
+			}
+		  }
+		  if(!(lab in listVals))
+		  {
+				listVals[lab] = new Array();
+				listCrit[lab] = new Array();			
+				listUH[lab] = new Array();
+				listPH[lab] = new Array();
+				listTime[lab] = new Array();
+				listSpecimen[lab] = new Array();
+				listComment[lab] = new Array();
+		    }
+            listVals[lab].push(val);
+		    var crit = "N";
+            if (temp.indexOf(val + " H") != -1)
+                crit = "H";
+            if (temp.indexOf(val + " L") != -1)
+                crit = "L";
+            var uh = val;
+		    if(crit != "N")
+				uh += " " + crit;
+			if(val == "Pos")
+				crit = "H";
+		    listCrit[lab].push(crit);
+	        listUH[lab].push(uh);
+		    var ph = val + "%";
+		    if(crit != "N")
+			ph += " " + crit;   
+		    listPH[lab].push(ph);
+		    listTime[lab].push(curTime);
+			
+			if(curSpec.indexOf("MIXED VENOUS") != -1)
+				curSpec = "MIXED VENOUS BLOOD";
+			
+		    listSpecimen[lab].push(curSpec);
+			listComment[lab].push(curComment);
+			if(lab == "Calcium")
+				templateSpecial("Corrected Calcium","Calcium");
+			if(lab == "Retic %")
+				templateSpecial("Retic Index","Retic %");
+			if(lab == "Osmolality" && curSpec == "SERUM")
+				templateSpecial("Osm Gap","Osmolality");	
+			} else if (vals[i].indexOf("====================================") != -1 && listMicro.length > 0) 
+			{
+				var tlm = listMicro.pop();
+				var ts = tlm.split("\n");
+				if(ts[ts.length - 1] != "")
+				{
+					listMicro.push(tlm + "\n");
+				} else
+				{
+					listMicro.push(tlm);
+				}
+						
+			} else if (vals[i].indexOf("Specimen:") != -1) 
+			{
+				curSpec = vals[i].split(": ")[1].split(". ")[0].trim();
+				var newI = i +1;
+				curComment = "";
+				var gettingComment = false;
+				while(newI < vals.length && vals[newI].indexOf("===============================") == -1)
+				{
+					if(gettingComment)
+						curComment += " " + vals[newI].trim() + "NEWLINECOMMENT";
+					if(vals[newI].substr(0,8)=="Comment:")
+					{
+						curComment += vals[newI].split("Comment:")[1] + "NEWLINECOMMENT";
+						gettingComment = true;
+					}
+					newI++;
+				}
+				curComment = curComment.replace(/\</g,"&#060;").replace(/\>/g,"&#062;").replace(/@/g," at ");
+			} else if (vals[i].indexOf("Specimen Collection Date:") != -1) 
+			{
+				curTime = vals[i].replace("Specimen Collection Date:", "").trim();
+				if(curTime.indexOf("@") == -1)
+				{
+					if(resultTime.indexOf("@") != -1 && resultTime.split("@")[0] == curTime)
+					{
+						curTime = resultTime;
+					} else if(resultTime.indexOf("@") != -1)
+					{
+						curTime += "@" + resultTime.split("@")[1];
+					} else
+					{
+						curTime += "@00:00";
+					}
+				}
+			} else if(vals[i].indexOf("Report Released Date/Time:") != -1) {
+				resultTime = vals[i].replace("Report Released Date/Time:", "").trim();
+			}  else if(vals[i].indexOf("Collection date:") != -1)
+			{
+				curTime = vals[i].split("Collection date:")[1].trim();
+				if(curTime.indexOf("@") == -1)
+				{
+					var cSplit = curTime.split(" ");
+					curTime = cSplit[0] + " " + cSplit[1] + " " + cSplit[2] + "@" + cSplit[3];
+				}
+				if (vals[i].indexOf("Collection sample:") != -1)
+				{
+					curSpec = vals[i].split("Collection date:")[0].split("Collection sample:")[1].trim();
+				}
+				listMicroSpec.push(curSpec + " @ " + timeFormat(curTime));
+				listMicro.push("");
+			} else if (vals[i].indexOf("Collection sample:") != -1)
+			{
+				curSpec = vals[i].split("Collection date:")[0].split("Collection sample:")[1].trim();
+			} else if(vals[i].indexOf("Comment on specimen:") != -1)
+			{
+				listMicroSpec.pop();
+				var np = vals[i+1];
+				var cs = vals[i].split("Comment on specimen:")[1].trim();
+				if(np.indexOf("Not Performed:") != -1)
+				{
+					cs += " " + np.split("Not Performed:")[0] + " Not Performed";
+				}
+				listMicroSpec.push(cs + " @ " + timeFormat(curTime));
+			} else if(vals[i].indexOf("CULTURE RESULTS:") != -1)
+			{
+				var textS = "Culture: \n";
+				textS += vals[i].split("CULTURE RESULTS:")[1].trim() + "\n";
+				var onlyBlank = false;
+				while(!onlyBlank)
+				{
+					i++;
+					if(vals[i].trim() == "")
+					{
+						if(vals[i + 1].trim() == "" || vals[i + 1].indexOf("GRAM STAIN:") != -1 || vals[i + 1].indexOf("ANTIBIOTIC SUSCEPTIBILITY TEST RESULTS:") != -1 || vals[i + 1].indexOf("CULTURE RESULTS") != -1 || vals[i + 1].indexOf("=--=--=--=--=--=--=--=--=--=--=-") != -1)
+							onlyBlank = true;	
+					} else
+					{
+						textS += vals[i].trim() + "\n";
+					}
+				}
+				var tlm = listMicro.pop();
+				if(tlm != "")
+				{
+					listMicro.push(tlm + "\n" + textS);
+				} else
+				{
+					listMicro.push(textS);
+				}
+			} else if(vals[i].indexOf("GRAM STAIN:") != -1)
+			{
+				var textS = "Gram stain: ";
+				textS += vals[i].split("GRAM STAIN:")[1].trim();
+				var onlyBlank = false;
+				while(!onlyBlank)
+				{
+					i++;
+					if(vals[i].trim() == "")
+					{
+						onlyBlank = true;
+					} else
+					{
+						if(vals[i].indexOf("CALLED TO") != -1)
+						{
+								textS += vals[i].split("CALLED TO")[0].trim();
+								onlyBlank = true;
+						} else
+						{
+							textS += " " + vals[i].trim();
+						}
+					}
+				}
+				var tlm = listMicro.pop();
+				if(tlm != "")
+				{
+					listMicro.push(tlm + "\n" + textS);
+				} else
+				{
+					listMicro.push(textS);
+				}
+			} else if(vals[i].indexOf("Remark(s):") != -1)
+			{
+				var textS = "Lab Remark(s): ";
+				textS += vals[i].split("Remark(s):")[1].trim();
+				var onlyBlank = false;
+				while(!onlyBlank)
+				{
+					i++;
+					if(vals[i].trim() == "")
+					{
+						onlyBlank = true;
+					} else
+					{
+						textS += " " + vals[i].trim();
+					}
+				}
+				var tlm = listMicro.pop();
+				if(tlm != "")
+				{
+					listMicro.push(tlm + "\n" + textS);
+				} else
+				{
+					listMicro.push(textS);
+				}
+			} else if(vals[i].indexOf("Fungus/Yeast:") != -1)
+			{
+				var textS = "Fungus/Yeast:";
+				textS += vals[i].split("Fungus/Yeast:")[1].trim();
+				var onlyBlank = false;
+				while(!onlyBlank)
+				{
+					i++;
+					if(vals[i].trim() == "")
+					{
+						onlyBlank = true;
+					} else
+					{
+						textS += " " + vals[i].trim();
+					}
+				}
+				var tlm = listMicro.pop();
+				if(tlm != "")
+				{
+					listMicro.push(tlm + "\n" + textS);
+				} else
+				{
+					listMicro.push(textS);
+				}
+			} 
+			else if(vals[i].indexOf("ANTIBIOTIC SUSCEPTIBILITY TEST RESULTS:") != -1)
+			{
+				var textS = "|||||||||||||||";
+				textS += vals[i].split("ANTIBIOTIC SUSCEPTIBILITY TEST RESULTS:")[1].trim();
+				i++;
+				var onlyBlank = false;
+				while(!onlyBlank)
+				{
+					i++;
+					if(vals[i].trim() == "")
+					{
+						onlyBlank = true;
+					} else
+					{
+						if(vals[i-1].trim() != "")
+							textS += "\n";
+						textS += vals[i];
+					}
+				}
+				var tlm = listMicro.pop();
+				if(tlm != "")
+				{
+					listMicro.push(tlm + "\n" + textS);
+				} else
+				{
+					listMicro.push(textS);
+				}
+			} 
+	}
+	/* 
+		Filling in special values
+	*/
+	// Calcium
+	if("Calcium" in listVals && "Albumin" in listVals)
+	{
+		for(var i = 0; i < listVals["Corrected Calcium"].length; i++)
+		{
+			var t1 = listTime["Corrected Calcium"][i];
+			var cv = parseFloat(listVals["Calcium"][i]);
+			var alb1 = getTCV("Albumin",t1);
+			var t2 = alb1[1];
+			var alb = parseFloat(alb1[0]);
+			var cc = (cv + 0.8*(4-alb));
+			var ccS = cc.toFixed(1);
+			listCrit["Corrected Calcium"][i] = "N";
+			listVals["Corrected Calcium"][i] = ccS;
+			if(ccS < 8.5)
+				listCrit["Corrected Calcium"][i] = "L";	
+			if(ccS > 10.5)
+				listCrit["Corrected Calcium"][i] = "H";
+			listUH["Corrected Calcium"][i] =  ccS + " (alb " + alb + " on " + t2.split("@")[0] + ")";
+			if(ccS < 8.5 || ccS > 10.5)
+				listUH["Corrected Calcium"][i] = "<span style='color: red; font-weight: bold'>" + ccS + " " + listCrit["Corrected Calcium"][i] + "</span>" + " (alb " + alb + " on " + t2.split("@")[0] + ")";
+		}
+	} else
+	{
+		deleteSpecial("Corrected Calcium");
+	}	
+	if("Retic %" in listVals && "HCT" in listVals)
+	{
+		for(var i = 0; i < listVals["Retic Index"].length; i++)
+		{
+			var t1 = listTime["Retic Index"][i];
+			var rc = parseFloat(listVals["Retic %"][i]);
+			var hctl = getTCV("HCT", t1);
+			var hctr = parseFloat(hctl[0]);
+			var rpi = (hctr/45)*rc;
+			if(hctr < 15)
+			{
+				rpi /= 2.5;
+			} else if(hctr < 25)
+			{
+				rpi /= 2.0;
+			} else if(hctr < 35)
+			{
+				rpi /= 1.5;
+			}		
+			listVals["Retic Index"][i] = "" + rpi.toFixed(2) + "";
+			listCrit["Retic Index"][i] = "N";
+			listUH["Retic Index"][i] = rpi.toFixed(2) + " (HCT " + hctr + " on " + hctl[1].split("@")[0] + ")";
+		}
+	} else
+	{
+		deleteSpecial("Retic Index");
+	}
+	if("Osmolality" in listVals)
+	{
+		var t1 = listTime["Osmolality"][0];
+		var osC = getTCV("Osmolality", t1, "SERUM||")[0];
+		var sC = getTCV("SODIUM", t1, "SERUM||")[0];
+		var bC = getTCV("UREA NITROGEN", t1, "SERUM||")[0];
+		var gC = getTCV("Glucose", t1, "SERUM||")[0];
+		if(osC != -1 && sC != -1 && bC != -1 && gC != -1)
+		{
+			for(var i = 0; i < listVals["Osm Gap"].length; i++)
+			{
+				t1 = listTime["Osm Gap"][i];
+				var os1 = parseFloat(getTCV("Osmolality", t1, "SERUM||")[0]);
+				var s1 = parseFloat(getTCV("SODIUM", t1, "SERUM||")[0]);
+				var b1 = parseFloat(getTCV("UREA NITROGEN", t1, "SERUM||")[0]);
+				var g1 = parseFloat(getTCV("Glucose", t1, "SERUM||")[0]);
+				var eC = getTCV("Ethanol", t1, "SERUM||")[0];
+				var eT = getTCV("Ethanol", t1, "SERUM||")[1];
+				if(eC != -1)
+				{
+					var diff = Math.abs(timeToDate(t1) - timeToDate(eT));
+					if(diff > msDay)
+					{
+						eC = -1;
+					}
+					try
+					{
+						if(eC.indexOf("<") != -1)
+						{
+							eC = -1;
+						}
+					} catch(e)
+					{
+					
+					}
+				}
+				if(eC == -1)
+					eC = 0;	
+				eC = parseFloat(eC);
+				var osmGap = os1 - 2*s1 - b1/2.8 - g1/18 - eC/4;		
+				listVals["Osm Gap"][i] = "" + osmGap.toFixed(1) + "";
+				listCrit["Osm Gap"][i] = "N";
+				listUH["Osm Gap"][i] = osmGap.toFixed(1);
+				if(eC != 0)
+					listUH["Osm Gap"] += " (corrected for EtOH of " + eC + ")";
+			}
+		} else
+		{
+			deleteSpecial("Osm Gap");
+		}		
+	} else
+	{
+		deleteSpecial("Osm Gap");
+	}
+	var prevSmear = false;
+	for(var i = 0; i < smearList.length; i++)
+	{
+		if(smearList[i] in listVals)
+			prevSmear = true;
+	}
+	if(prevSmear)
+	{
+		var listTrendTimes = [];
+		for(var i = 0; i < smearList.length; i++)
+		{
+			if(smearList[i] in listTime)
+			{
+				for(var j = 0; j < listTime[smearList[i]].length; j++)
+				{
+					if(listTrendTimes.indexOf(timeToDate(listTime[smearList[i]][j])) == -1)
+						listTrendTimes.push(timeToDate(listTime[smearList[i]][j]));
+				}
+			}
+		}
+		listTrendTimes.sort(function(a,b){return b-a;});
+		for(var i = 0; i < listTrendTimes.length; i++)
+		{
+			if(i == 0)
+			{
+				listVals["SMEAR"] = new Array();
+				listCrit["SMEAR"] = new Array();
+				listUH["SMEAR"] = new Array();
+				listPH["SMEAR"] = new Array();
+				listTime["SMEAR"] = new Array();
+				listSpecimen["SMEAR"] = new Array();
+			}
+			var valString = "";
+			for(var j = 0; j < smearList.length; j++)
+			{
+				if(smearList[j] in listTime)
+				{
+					for(var k = 0; k < listTime[smearList[j]].length; k++)
+					{
+						if(listTrendTimes[i] == timeToDate(listTime[smearList[j]][k]))
+						{
+							if(valString != "")
+								valString += "  ";
+							valString += smearList[j] + ": " + listVals[smearList[j]][k];
+						}
+					}
+				}
+			}
+			listVals["SMEAR"].push(valString);
+			listUH["SMEAR"].push(valString);
+			listPH["SMEAR"].push(valString);
+			listCrit["SMEAR"].push("N");
+			listSpecimen["SMEAR"].push("BLOOD");
+			listTime["SMEAR"].push(msToDate(listTrendTimes[i]));
+		}
+	}
+	var ttABG = false;
+	var ttVBG = false;
+	var ttMBG = false;
+	if("PCO2" in listVals)
+	{
+		for(var i = 0; i < listSpecimen["PCO2"].length; i++)
+		{
+			if(listSpecimen["PCO2"][i] == "ARTERIAL BLOOD")
+				ttABG = true;
+			if(listSpecimen["PCO2"][i] == "VENOUS BLOOD")
+				ttVBG = true;
+			if(listSpecimen["PCO2"][i] == "MIXED VENOUS BLOOD")
+				ttMBG = true;
+		}
+	}
+	if(ttMBG)
+	{
+		var mbgList = ["PH","PCO2","PO2","HCO3","O2,SAT"];
+		var listTrendTimes = [];
+		for(var i = 0; i < mbgList.length; i++)
+		{
+			if(mbgList[i] in listTime)
+			{
+				for(var j = 0; j < listTime[mbgList[i]].length; j++)
+				{
+					if(listTrendTimes.indexOf(timeToDate(listTime[mbgList[i]][j])) == -1 && "||BLOOD||MIXED VENOUS BLOOD||SERUM||PLASMA||".indexOf("||" + listSpecimen[mbgList[i]][j] + "||") != -1)
+						listTrendTimes.push(timeToDate(listTime[mbgList[i]][j]));
+				}
+			}
+		}
+		listTrendTimes.sort(function(a,b){return b-a;});		
+		for(var i = 0; i < listTrendTimes.length; i++)
+		{
+			if(i == 0)
+			{
+				listVals["Mixed VBG"] = new Array();
+				listCrit["Mixed VBG"] = new Array();
+				listUH["Mixed VBG"] = new Array();
+				listPH["Mixed VBG"] = new Array();
+				listTime["Mixed VBG"] = new Array();
+				listSpecimen["Mixed VBG"] = new Array();
+			}
+			var valString = "";
+			for(var j = 0; j < mbgList.length; j++)
+			{
+				if(mbgList[j] in listTime)
+				{
+					for(var k = 0; k < listTime[mbgList[j]].length; k++)
+					{
+						if(listTrendTimes[i] == timeToDate(listTime[mbgList[j]][k]) && "||BLOOD||MIXED VENOUS BLOOD||SERUM||PLASMA||".indexOf("||" + listSpecimen[mbgList[j]][k] + "||") != -1)
+						{
+							if(valString != "")
+								valString += "  ";
+							var pre = "";
+							var post = "";
+							if(listCrit[mbgList[j]][k] != "N")
+							{
+								pre = "<span style='color: red; font-weight: bold'>";
+								post = "</span>";
+							}
+							valString += mbgList[j] + ": " + pre + listUH[mbgList[j]][k] + post;
+						}
+					}
+				}
+			}
+			listVals["Mixed VBG"].push(valString);
+			listUH["Mixed VBG"].push(valString);
+			listPH["Mixed VBG"].push(valString);
+			listCrit["Mixed VBG"].push("N");
+			listSpecimen["Mixed VBG"].push("MIXED VENOUS BLOOD");
+			listTime["Mixed VBG"].push(msToDate(listTrendTimes[i]));
+		}
+	}
+	if(ttVBG)
+	{
+		var vbgList = ["PH","PCO2","PO2","HCO3","HGB POC","Na POC","K POC","Ca++ POC","Base Excess POC"];
+		var listTrendTimes = [];
+		for(var i = 0; i < vbgList.length; i++)
+		{
+			if(vbgList[i] in listTime)
+			{
+				for(var j = 0; j < listTime[vbgList[i]].length; j++)
+				{
+					if(listTrendTimes.indexOf(timeToDate(listTime[vbgList[i]][j])) == -1 && "||BLOOD||VENOUS BLOOD||SERUM||PLASMA||".indexOf("||" + listSpecimen[vbgList[i]][j] + "||") != -1)
+						listTrendTimes.push(timeToDate(listTime[vbgList[i]][j]));
+				}
+			}
+		}
+		listTrendTimes.sort(function(a,b){return b-a;});		
+		for(var i = 0; i < listTrendTimes.length; i++)
+		{
+			if(i == 0)
+			{
+				listVals["VBG"] = new Array();
+				listCrit["VBG"] = new Array();
+				listUH["VBG"] = new Array();
+				listPH["VBG"] = new Array();
+				listTime["VBG"] = new Array();
+				listSpecimen["VBG"] = new Array();
+			}
+			var valString = "";
+			for(var j = 0; j < vbgList.length; j++)
+			{
+				if(vbgList[j] in listTime)
+				{
+					for(var k = 0; k < listTime[vbgList[j]].length; k++)
+					{
+						if(listTrendTimes[i] == timeToDate(listTime[vbgList[j]][k]) && "||BLOOD||VENOUS BLOOD||SERUM||PLASMA||".indexOf("||" + listSpecimen[vbgList[j]][k] + "||") != -1)
+						{
+							if(valString != "")
+								valString += "  ";
+							var pre = "";
+							var post = "";
+							if(listCrit[vbgList[j]][k] != "N")
+							{
+								pre = "<span style='color: red; font-weight: bold'>";
+								post = "</span>";
+							}
+							valString += vbgList[j] + ": " + pre + listUH[vbgList[j]][k] + post;
+						}
+					}
+				}
+			}
+			listVals["VBG"].push(valString);
+			listUH["VBG"].push(valString);
+			listPH["VBG"].push(valString);
+			listCrit["VBG"].push("N");
+			listSpecimen["VBG"].push("VENOUS BLOOD");
+			listTime["VBG"].push(msToDate(listTrendTimes[i]));
+		}
+	}
+	if(ttABG)
+	{
+		var abgList = ["PH","PCO2","PO2","HCO3"];
+		var listTrendTimes = [];
+		for(var i = 0; i < abgList.length; i++)
+		{
+			if(abgList[i] in listTime)
+			{
+				for(var j = 0; j < listTime[abgList[i]].length; j++)
+				{
+					if(listTrendTimes.indexOf(timeToDate(listTime[abgList[i]][j])) == -1 && listSpecimen[abgList[i]][j] == "ARTERIAL BLOOD")
+						listTrendTimes.push(timeToDate(listTime[abgList[i]][j]));
+				}
+			}
+		}
+		listTrendTimes.sort(function(a,b){return b-a;});
+		for(var i = 0; i < listTrendTimes.length; i++)
+		{
+			if(i == 0)
+			{
+				listVals["ABG"] = new Array();
+				listCrit["ABG"] = new Array();
+				listUH["ABG"] = new Array();
+				listPH["ABG"] = new Array();
+				listTime["ABG"] = new Array();
+				listSpecimen["ABG"] = new Array();
+			}
+			var valString = "";
+			var ph = -1;
+			var co2 = -1;
+			var bicarb = -1;
+			var gap = getTCV("ANION GAP",msToDate(listTrendTimes[i]))[0];
+			for(var j = 0; j < abgList.length; j++)
+			{
+				if(abgList[j] in listTime)
+				{
+					for(var k = 0; k < listTime[abgList[j]].length; k++)
+					{
+						if(listTrendTimes[i] == timeToDate(listTime[abgList[j]][k]) && listSpecimen[abgList[j]][k] == "ARTERIAL BLOOD")
+						{
+							if(valString != "")
+								valString += "  ";
+							var pre = "";
+							var post = "";
+							if(listCrit[abgList[j]][k] != "N")
+							{
+								pre = "<span style='color: red; font-weight: bold'>";
+								post = "</span>";
+							}
+							valString += abgList[j] + ": " + pre + listUH[abgList[j]][k] + post;
+							if(abgList[j] == "PH")
+								ph = listVals[abgList[j]][k];
+							if(abgList[j] == "PCO2")
+								co2 = listVals[abgList[j]][k];
+							if(abgList[j] == "HCO3")
+								bicarb = listVals[abgList[j]][k];
+						}
+					}
+				}
+			}
+			var bcs = bicarb;
+			if(bicarb < 20)
+				bcs = "<span style='color: red; font-weight: bold'>" + bcs + " L</span>";
+			if(bicarb > 30)
+				bcs = "<span  style='color: red; font-weight: bold'>" + bcs + " H</span>";
+			if(ph != -1 && co2 != -1 && bicarb != -1 && gap != -1)
+			{
+				valString += "\n";
+				var co2crit = "N";
+				if(co2 < 38)
+					co2crit = "L";
+				if(co2 > 42)
+					co2crit = "H";
+				var bicarbcrit = "N";
+				if(bicarb < 22)
+					bicarbcrit = "L";
+				if(bicarb > 26)
+					bicarbcrit = "H";
+				var co2corr = bicarb;
+				if(gap > 12)
+				{
+					co2corr += gap - 12;
+				}
+				var corrcrit = "N";
+				if(co2corr < 22)
+					corrcrit = " non-gap metabolic acidosis";
+				if(co2corr > 26)
+					corrcrit = " metabolic alkalosis";
+
+				if(ph < 7.38) 	//Acidosis
+				{
+					if(co2crit == "N" && bicarbcrit == "N")
+					{
+						//everything is normal, should re-run algorithm
+						if(co2 == 40 && bicarb == 24)
+						{
+							valString += "Uninterpretable - normal PCO2/BICARB";
+						}
+						if(co2 < 40)
+							co2crit = "L";
+						if(co2 > 40)
+							co2crit = "H";
+						if(bicarb < 24)
+							bicarbcrit = "L";
+						if(bicarb > 24)
+							bicarbcrit = "H";
+						valString += "(Warning: PCO2/BICARB are near normal) ";
+					}
+					if(co2crit == "H" && bicarbcrit == "L") //combined respiratory/metabolic acidosis
+					{
+						if(gap > 12) //combined respiratory/metabolic gap acidosis
+						{
+							if(corrcrit != "N")
+							{
+								valString += "Respiratory acidosis,  anion gap metabolic acidosis,  and" + corrcrit;
+							} else
+							{
+								valString += "Respiratory acidosis  and anion gap metabolic acidosis"
+							}
+						} else
+						{
+							valString += "Respiratory acidosis and non-gap metabolic acidosis"
+						}
+					} else if(co2crit == "L" && bicarbcrit == "H") //not possible
+					{
+						valString += "Uninterpretable - acidosis with respiratory & metabolic alkalosis"
+					} else if(bicarbcrit == "L") //metabolic acidosis
+					{
+						if(gap > 12)
+						{
+							valString += "Primary anion gap metabolic acidosis";
+							if(corrcrit != "N")
+							{
+								valString += " with " + corrcrit;
+							}
+							valString += " and  ";
+						} else
+						{
+							valString += "Primary non-gap metabolic acidosis and  ";
+						}
+						
+						//expected paco2 = (1.5*bicarb) + 8 +/- 2
+						var expco2 = 1.5*bicarb + 8;
+						if(co2 - expco2 > 2)
+						{
+							valString += "secondary respiratory acidosis (inadequate compensation)";
+						} else if(co2 - expco2 < -2)
+						{
+							valString += "secondary respiratory alkalosis";
+						} else //compensated
+						{
+							valString += "appropriate respiratory compensation";
+						}
+					} else if(co2crit == "H") //respiratory acidosis
+					{
+						var phdif = 7.4 - ph ;
+						var expdifacute = 0.008 * (co2 - 40);
+						var expdifchron = 0.003* (co2 - 40);
+						var expdifmid = (expdifacute + expdifchron)/2;
+						if(phdif > (expdifacute + 0.04))
+						{
+							valString += "Primary respiratory acidosis with secondary metabolic acidosis";
+						} else if(phdif > expdifmid)
+						{
+							valString += "Primary acute respiratory acidosis with  appropriate metabolic compensation  (or chronic with secondary metabolic acidosis)";
+						} else if(phdif > (expdifchron - 0.04))
+						{
+							valString += "Primary chronic respiratory acidosis with  appropriate metabolic compensation  (or acute with secondary metabolic alkalosis)";
+						} else
+						{
+							valString += "Primary respiratory acidosis with  secondary metabolic alkalosis";
+						}
+					}
+						
+				} else if(ph > 7.42)
+				{
+					if(co2crit == "N" && bicarbcrit == "N")
+					{
+						//everything is normal, should re-run algorithm
+						if(co2 == 40 && bicarb == 24)
+						{
+							valString += "Uninterpretable - normal PCO2/BICARB";
+						}
+						if(co2 < 40)
+							co2crit = "L";
+						if(co2 > 40)
+							co2crit = "H";
+						if(bicarb < 24)
+							bicarbcrit = "L";
+						if(bicarb > 24)
+							bicarbcrit = "H";
+						valString += "(Warning: PCO2/BICARB are near normal) ";
+					}
+					if(co2crit == "L" && bicarbcrit == "H")
+					{
+						valString += "Combined respiratory and metabolic alkalosis";
+					} else if(co2crit == "H" && bicarbcrit == "L")
+					{
+						valString += "Uninterpretable - alkalosis with respiratory & metabolic acidosis"
+					} else if(co2crit == "L") //respiratory alkalosis
+					{
+						var phdif = ph - 7.4;
+						var expdifacute = 0.008 * (40 - co2);
+						var expdifchron = 0.003* (40 - co2);
+						var expdifmid = (expdifacute + expdifchron)/2;
+						if(phdif > (expdifacute + 0.04))
+						{
+							valString += "Primary respiratory alkalosis with  secondary metabolic alkalosis";
+						} else if(phdif > expdifmid)
+						{
+							valString += "Primary acute respiratory alkalosis with  appropriate metabolic compensation  (or chronic with secondary metabolic alkalosis)";
+						} else if(phdif > (expdifchron - 0.04))
+						{
+							valString += "Primary chronic respiratory alkalosis with  appropriate metabolic compensation  (or acute with secondary metabolic acidosis)";
+						} else
+						{
+							valString += "Primary respiratory alkalosis with  secondary metabolic acidosis";
+						}
+					} else if (bicarbcrit == "H")
+					{
+						var expco2 = 40 + 0.75*(bicarb - 24);
+						if(expco2 - co2 > 5)
+						{
+							valString += "Primary metabolic alkalosis with  secondary respiratory alkalosis";
+						} else if(co2 - expco2 > 5)
+						{
+							valString += "Primary metabolic alkalosis with  secondary respiratory acidosis";
+						} else
+						{
+							valString += "Primary metabolic alkalosis with  appropriate respiratory compensation";
+						}
+					} 
+				} else  //not acidosis/alkalosis
+				{
+					if(co2crit == "H" && bicarbcrit == "H")
+					{
+						valString += "Balanced respiratory acidosis and  metabolic alkalosis";
+					} else if(co2crit == "L" && bicarbcrit == "L")
+					{
+						valString += "Balanced respiratory alkalosis and  metabolic acidosis";
+					} else
+					{
+						valString += "No acid/base abnormality";
+					}
+				}			
+			}
+			listVals["ABG"].push(valString);
+			listUH["ABG"].push(valString);
+			listPH["ABG"].push(valString);
+			listCrit["ABG"].push("N");
+			listSpecimen["ABG"].push("ARTERIAL BLOOD");
+			listTime["ABG"].push(msToDate(listTrendTimes[i]));
+		}	
+	}
+}
+
+function fr()
+{	
+    cbcData = "";
+    chemistryData = "";
+    urineData = "";
+    pleuralData = "";
+    peritonealData = "";
+    cexclude = "||";
+	cexclude += smearList.join("||") + "||";
+	cexclude += "HCO3||HGB POC||Na POC||K POC||Ca++ POC||Base Excess POC||PH||PCO2||PO2||BICARBONATE||O2,SAT||TEMPERATURE||";
+	cexclude += "HCT(POC)||TCO2(POC)||O2,SAT(POC)||O2,SAT||TEMPERATURE||"
+    uexclude = "";
+    csfData = "";
+	
+	if("WBC" in listVals)
+	{
+		var valList = ["WBC","HGB","HCT","PLT"];
+		var t1 = getNTime(valList, "BLOOD", 0);
+		var t2 = getNTime(valList, "BLOOD", 1);
+		var t3 = getNTime(valList, "BLOOD", 2);
+		var cbc0 = timeFormat(t1);
+		var inList = getIndex(valList, t1, "BLOOD");
+		var wbc = getValList(listVals, "WBC", inList, "***");
+		var hgb = getValList(listVals, "HGB", inList, "***");
+		var hct = getValList(listVals, "HCT", inList, "***");
+		var plt = getValList(listVals, "PLT", inList, "***");
+		var anemiaFlag = false;
+		if(listCrit["HGB"][inList["HGB"]] == "L")
+			anemiaFlag = true;
+		var cbc1 = replicate(" ", wbc.toString().length) + "\\ " + valueCritRed(hgb,inList,"HGB") + " /";
+		var cbc2 = valueCritRed(wbc,inList,"WBC") + " ------ " + valueCritRed(plt,inList,"PLT") ;
+		var cbc3 = replicate(" ", wbc.toString().length) + "/ " + valueCritRed(hct,inList,"HCT") + " \\";
+		var mL = Math.max(replaceTags(cbc0).length, replaceTags(cbc1).length, replaceTags(cbc2).length, replaceTags(cbc3).length) + 4;	
+		var wbc2 = "***";
+		var hgb2 = "***";
+		var plt2 = "***";
+		var hct2 = "***";	
+		if(t2 != -1)
+		{
+			inList = getIndex(valList, t2, "BLOOD");
+			wbc2 = getValList(listVals, "WBC", inList, "***");
+			hgb2 = getValList(listVals, "HGB", inList, "***");
+			hct2 = getValList(listVals, "HCT", inList, "***");
+			plt2 = getValList(listVals, "PLT", inList, "***");
+			cbc0 += replicate(" ", mL - replaceTags(cbc0).length);
+			cbc1 += replicate(" ", mL - replaceTags(cbc1).length);
+			cbc2 += replicate(" ", mL - replaceTags(cbc2).length);
+			cbc3 += replicate(" ", mL - replaceTags(cbc3).length);
+			cbc0 += timeFormat(t2);
+			cbc1 += replicate(" ", wbc2.toString().length) + "\\ " + valueCritRed(hgb2,inList,"HGB") + " /";
+			cbc2 += valueCritRed(wbc2,inList,"WBC")+ " ------ " + valueCritRed(plt2,inList,"PLT");
+			cbc3 += replicate(" ", wbc2.toString().length) + "/ " + valueCritRed(hct2,inList,"HCT") + " \\";
+		}
+		if(t3 != -1)
+		{
+			mL = Math.max(replaceTags(cbc0).length, replaceTags(cbc1).length, replaceTags(cbc2).length, replaceTags(cbc3).length) + 4;	
+			var wbc3 = "***";
+			var hgb3 = "***";
+			var plt3 = "***";
+			var hct3 = "***";
+			inList = getIndex(valList, t3, "BLOOD");
+			wbc3 = getValList(listVals, "WBC", inList, "***");
+			hgb3 = getValList(listVals, "HGB", inList, "***");
+			hct3 = getValList(listVals, "HCT", inList, "***");
+			plt3 = getValList(listVals, "PLT", inList, "***");
+			cbc0 += replicate(" ", mL - replaceTags(cbc0).length);
+			cbc1 += replicate(" ", mL - replaceTags(cbc1).length);
+			cbc2 += replicate(" ", mL - replaceTags(cbc2).length);
+			cbc3 += replicate(" ", mL - replaceTags(cbc3).length);
+			cbc0 += timeFormat(t3);
+			cbc1 += replicate(" ", wbc3.toString().length) + "\\ " + valueCritRed(hgb3,inList,"HGB") + " /";
+			cbc2 += valueCritRed(wbc3,inList,"WBC") + " ------ " + valueCritRed(plt3,inList,"PLT");
+			cbc3 += replicate(" ", wbc3.toString().length) + "/ " + valueCritRed(hct3,inList,"HCT") + " \\";
+		}		
+		if(wbc != "***" || wbc2 != "***")
+		{
+			cexclude += "WBC||";
+		}
+		if(hgb != "***" || hgb2 != "***")
+		{
+			cexclude += "HGB||";
+		}
+		if(hct != "***" || hct2 != "***")
+		{
+			cexclude += "HCT||";
+		}
+		if(plt != "***" || plt2 != "***")
+		{
+			cexclude += "PLT||";
+		}
+		valList = ["PMN", "Lymph", "Mono", "Eos", "Baso", "Bands", "ABSOLUTE NEUTROPHIL COUNT", "ABSOLUTE LYMPHOCYTE COUNT", "NRBC/100WBC"];
+		var tDiff = getNTime(valList, "BLOOD", 0);
+		inList = getIndex(valList, tDiff, "BLOOD");
+
+		var cbcDiff = getValListT(listPH, "PMN", inList, "", "PMN: ") + getValListT(listPH, "Lymph", inList, "", " LYMPH: ") + getValListT(listPH, "Mono", inList, "", " MONO: ") + getValListT(listPH, "Eos", inList, "", " EOS: ") + getValListT(listPH, "Baso", inList, "", " BASO: ") + getValListT(listPH, "Bands", inList, "", " BANDS: ");
+		var cbcExtras = getValListT(listUH, "ABSOLUTE NEUTROPHIL COUNT", inList, "", "ANC: ", " ", true) + getValListT(listUH, "ABSOLUTE LYMPHOCYTE COUNT", inList, "", "ALC: ", " ", true) + getValListT(listUH, "NRBC/100WBC", inList, "", "Nucleated RBCs: ", " ", true);
+		for(var i = 0; i < valList.length; i++)
+			cexclude += valList[i] + "||";
+		cexclude += "AMC||AEC||ABC||AIG||ANRBC||"
+		if(cbcDiff != "")
+		{
+			if(tDiff != t1)
+				cbcDiff += " @ " + tDiff;
+			cbcDiff += "\n";		
+		}		
+		if(cbcExtras != "")
+		{
+			if(tDiff != t1)
+				cbcExtras += " @ " + tDiff;
+			cbcExtras += "\n";
+		}
+		var anemiaText = "";
+		if(anemiaFlag)
+		{
+			valList = ["RBC", "MCV", "RDW", "MCHC", "MCH"];
+			var tAnemia = getNTime(valList, "BLOOD", 0);
+			inList = getIndex(valList, tAnemia, "BLOOD");
+			anemiaText += getValListT(listUH, "MCV", inList, "MCV: *** ", "MCV: ", " ") + getValListT(listUH, "RDW", inList, "", "RDW: ", " ") + getValListT(listUH, "MCHC", inList, "", "MCHC: ", " ", true) + getValListT(listUH, "MCH", inList, "", "MCH: ", " ", true) + getValListT(listUH, "RBC", inList, "", "RBC: ", "", true);
+			if(tAnemia != t1)
+				anemiaText += " @ " + tAnemia;
+			anemiaText += "\n";
+			if(listCrit["MCV"][inList["MCV"]] == "L" && inList["MCV"] != -1 && inList["RBC"] != -1)
+			{
+				var mcv = listVals["MCV"][inList["MCV"]];
+				var rbc = listVals["RBC"][inList["RBC"]];
+				var mentI = mcv/rbc;
+				if(mentI > 13)
+					anemiaText += "Mentzer index of " + mentI.toFixed(2) + " (> 13, predictive of IDA)"
+				if(mentI < 13)
+					anemiaText += "Mentzer index of " + mentI.toFixed(2) + " (< 13, predictive of B-thal)" 
+				anemiaText += "\n";
+			}	
+		}
+		// WBC RISE
+		var wbcmin = getMinima("WBC", Date.now(), 10);
+		var wbcText = "";
+		if(wbcmin != 0)
+		{
+			var percwbc = 100*(wbc - listVals["WBC"][wbcmin])/(listVals["WBC"][wbcmin]);
+			if(percwbc > 30)
+			{
+				wbcText = "WBC rise of " + Math.round(percwbc) + "% (" + listVals["WBC"][wbcmin] + " -> " + wbc + ") over " + Math.round((timeToDate(t1) - timeToDate(listTime["WBC"][wbcmin]))/msDay) + " days\n";		
+			}
+		}		
+
+		// HGB DROP
+		var hgbmax = getMaxima("HGB", Date.now(), 10);
+		var hgbText = "";
+		if(hgbmax != 0)
+		{
+			var perchgb = 100*(listVals["HGB"][hgbmax] - hgb)/(listVals["HGB"][hgbmax]);
+			if(perchgb > 30)
+			{
+				hgbText = "HGB drop of " + Math.round(perchgb) + "% (" + listVals["HGB"][hgbmax] + " -> " + hgb + ") over " + Math.round((timeToDate(t1) - timeToDate(listTime["HGB"][hgbmax]))/msDay) + " days\n";		
+			}
+		}
+		
+		// PLT DROP
+		var pltmax = getMaxima("PLT", Date.now(), 10);
+		var pltText = "";
+		if(pltmax != 0)
+		{
+			var percPlt = 100*(listVals["PLT"][pltmax] - plt)/(listVals["PLT"][pltmax]);
+			if(percPlt > 30)
+			{
+				pltText = "Platelet drop of " + Math.round(percPlt) + "% (" + listVals["PLT"][pltmax] + " -> " + plt + ") over " + Math.round((timeToDate(t1) - timeToDate(listTime["PLT"][pltmax]))/msDay) + " days\n";		
+			}
+		}
+		cbcData += cbc0 + "\n" + cbc1 + "\n" + cbc2 + "\n" + cbc3 + "\n\n" + cbcDiff + cbcExtras + anemiaText + wbcText + hgbText + pltText;
+		cexclude += "RBC||MCV||RDW||MCHC||MCH||MPV||";
+	}
+    if("Creatinine" in listVals) 
+    {
+		var valList = ["SODIUM","POTASSIUM","CHLORIDE","CO2","UREA NITROGEN","Creatinine","Glucose"];
+		var t1 = getNTime(valList, "SERUM", 0);
+		var onlyPlasma = false;
+		if(t1 == -1)
+		{
+			t1 = getNTime(valList, "PLASMA", 0);
+			onlyPlasma = true;
+		}
+		
+		if(t1 != -1)
+		{
+			var t2 = getNTime(valList, "SERUM", 1);
+			if(t2 == -1)
+			{
+				var t2 = getNTime(valList, "PLASMA", 1);
+			}
+			var bmp0 = t1 + "                 ";
+			var inList = getIndex(valList, t1, "SERUM");
+			if(onlyPlasma)
+				inList = getIndex(valList, t1, "PLASMA");
+			var crnow = getValList(listVals, "Creatinine", inList, "  ***");
+			var corNa = parseInt(getValList(listVals, "SODIUM", inList, "  ***"));
+			var gluc = parseInt(getValList(listVals, "Glucose", inList, "  ***"));
+			var afterTx = "";
+			var agN = 0;
+			if(getValList(listVals, "SODIUM", inList, "  ***") != "  ***" && getValList(listVals, "Glucose", inList, "  ***") != "  ***" && gluc >= 200)
+			{
+				corNa = Math.round(corNa + 0.016 * (gluc - 100)) + "*";
+				agN = Math.round(corNa + 0.016 * (gluc - 100));
+				if(corNa < 135 || corNa > 145)
+				{
+					corNa = "<span style='color: red; font-weight: bold'>" + pad(corNa,6) + "</span>";
+				} else
+				{
+					corNa = pad(corNa,6);
+				}
+				afterTx = "* - sodium corrected for hyperglycemia\n";
+			} else
+			{
+				corNa = pgetValList(listVals, "SODIUM", inList, "  ***") + " ";
+				agN = parseInt(getValList(listVals, "SODIUM", inList, "  ***"));
+			}
+
+			var comm = getComment(listComment,"POTASSIUM", inList, "");
+			var hemo1 = 0;
+			if(comm.indexOf("1+ hemolysis") != -1)
+				hemo1 = 1;
+			if(comm.indexOf("2+ hemolysis") != -1)
+				hemo1 = 2;		
+			if(comm.indexOf("3+ hemolysis") != -1)
+				hemo1 = 3;		
+			var hemo1s = " ";
+			var hemo1tx = "";
+			var hemo2tx = "";
+			if(hemo1 > 0)
+			{
+				hemo1s = "^";
+				hemo1tx = hemo1s + " - " + hemo1 + "+ hemolysis     ";
+			}
+			var corK = "  *** "
+			if(getValList(listVals, "POTASSIUM", inList, "  ***") != "  ***")
+			{
+				corK = parseFloat(getValList(listVals, "POTASSIUM", inList, "  ***"));
+				if(corK < 3.5 || corK > 5.0)
+				{
+					corK = "<span style='color: red; font-weight: bold'>" + pad(corK.toFixed(1) + hemo1s,6) + "</span>";
+				} else
+				{
+					corK = pad(corK.toFixed(1) + hemo1s,6);
+				}
+			}
+			var albText = "";
+			var albPoint = "";
+			var anionGap = parseInt(getValList(listVals, "SODIUM", inList, "  ***")) - parseInt(getValList(listVals, "CHLORIDE", inList, "  ***")) - parseInt(getValList(listVals, "CO2", inList, "  ***"));
+			if("Albumin" in listVals)
+			{
+				var alb = getTCV("Albumin",t1,"SERUM||PLASMA||");
+				if(alb[0] != -1 && (alb[0] < 3.5 || alb[0] > 4.5))
+				{
+					anionGap += 2.5*(4-alb[0]);
+					albText = "` - corrected for albumin\n";
+					albPoint = "`";
+				}
+			}
+			anionGap = Math.round(anionGap);
+			if(anionGap > 16)
+			{
+				anionGap = "<span style='color: red; font-weight: bold'>" + anionGap + albPoint + "</span>";
+			} else
+			{
+				anionGap = anionGap + albPoint;
+			}
+			var bmp1 = corNa + "| " + pgetValList(listVals, "CHLORIDE", inList, "  ***") + " | " + pgetValList(listVals, "UREA NITROGEN", inList, "  ***") + " /";
+			var bmp2 = replicate("-", 22)  + " " + getValList(listVals, "Glucose", inList, "***");
+			var bmp3 = corK + "| " + pgetValList(listVals, "CO2", inList, "  ***") + " | " + pgetValList(listVals, "Creatinine", inList, "  ***") + " \\ Gap: " + anionGap;
+			var mL = Math.max(replaceTags(bmp0).length, replaceTags(bmp1).length, replaceTags(bmp2).length, replaceTags(bmp3).length);
+			if(t2 != -1)
+			{
+				bmp0 += replicate(" ", mL - replaceTags(bmp0).length);
+				bmp1 += replicate(" ", mL - replaceTags(bmp1).length);
+				bmp2 += replicate(" ", mL - replaceTags(bmp2).length);
+				bmp3 += replicate(" ", mL - replaceTags(bmp3).length);
+				inList = getIndex(valList, t2, "SERUM");
+				if(onlyPlasma)
+				{
+					inList = getIndex(valList, t2, "PLASMA");
+				}
+				bmp0 += t2;
+				var corNa2 = parseInt(getValList(listVals, "SODIUM", inList, "  ***"));
+				var gluc2 = parseInt(getValList(listVals, "Glucose", inList, "  ***"));
+				if(getValList(listVals, "SODIUM", inList, "  ***") != "  ***" && getValList(listVals, "Glucose", inList, "  ***") != "  ***" && gluc2 >= 200)
+				{
+					corNa2 = Math.round(corNa2 + 0.016 * (gluc2 - 100)) + "*";
+					agN = Math.round(corNa + 0.016 * (gluc - 100));
+					if(corNa2 < 135 || corNa2 > 145)
+					{
+						corNa2 = "<span style='color: red; font-weight: bold'>" + pad(corNa2,6) + "</span>";
+						
+					} else
+					{
+						corNa2 = pad(corNa2,6);
+					}
+					afterTx = "* - sodium corrected for hyperglycemia\n";
+				} else
+				{
+					corNa2 = pgetValList(listVals, "SODIUM", inList, "  ***") + " ";
+					agN = parseInt(getValList(listVals, "SODIUM", inList, "  ***"));
+				}
+				
+				var comm2 = getComment(listComment,"POTASSIUM", inList, "");
+				var hemo2 = 0;
+				if(comm2.indexOf("1+ hemolysis") != -1)
+					hemo2 = 1;
+				if(comm2.indexOf("2+ hemolysis") != -1)
+					hemo2 = 2;		
+				if(comm2.indexOf("3+ hemolysis") != -1)
+					hemo2 = 3;		
+				var hemo2s = " ";
+				if(hemo2 > 0)
+				{
+					hemo2s = "'";
+					if(hemo2 == hemo1 || hemo1 == 0)
+					{
+						hemo2s = "^";
+					}
+					hemo2tx = hemo2s + " - " + hemo2 + "+ hemolysis";
+					if(hemo2 == hemo1)
+					{
+						hemo2tx = "";
+					}
+				}
+				if(hemo2tx != "" || hemo1tx != "")
+				{
+					hemo2tx += "\n";
+				}
+				var corK2 = "  *** ";
+				if(getValList(listVals, "POTASSIUM", inList, "  ***") != "  ***")
+				{
+					corK2 = parseFloat(getValList(listVals, "POTASSIUM", inList, "  ***"));
+					if(corK2 < 3.5 || corK2 > 5.0)
+					{
+						corK2 = "<span style='color: red; font-weight: bold'>" + pad(corK2.toFixed(1) + hemo2s,6) + "</span>";
+					} else
+					{
+						corK2 = pad(corK2.toFixed(1) + hemo2s,6);
+					}
+				}
+				anionGap = parseInt(getValList(listVals, "SODIUM", inList, "  ***")) - parseInt(getValList(listVals, "CHLORIDE", inList, "  ***")) - parseInt(getValList(listVals, "CO2", inList, "  ***"));
+				if("Albumin" in listVals)
+				{
+					var alb = getTCV("Albumin",t2,"SERUM||PLASMA||");
+					albPoint = "";
+					if(alb[0] != -1 && (alb[0] < 3.5 || alb[0] > 4.5))
+					{
+						anionGap += 2.5*(4-alb[0]);
+						albText = "` - corrected for albumin\n";
+						albPoint = "`";
+					}
+				}
+				anionGap = Math.round(anionGap);
+				
+				if(anionGap > 16)
+				{
+					anionGap = "<span style='color: red; font-weight: bold'>" + anionGap + albPoint + "</span>";
+				} else
+				{
+					anionGap = anionGap + albPoint;
+				}
+				
+				bmp1 += corNa2 + "| " + pgetValList(listVals, "CHLORIDE", inList, "  ***") + " | " + pgetValList(listVals, "UREA NITROGEN", inList, "  ***") + " /";
+				bmp2 += replicate("-", 22) + " " + getValList(listVals, "Glucose", inList, "***");
+				bmp3 += corK2 + "| " + pgetValList(listVals, "CO2", inList, "  ***") + " | " + pgetValList(listVals, "Creatinine", inList, "  ***") + " \\ Gap: " + anionGap;
+			}		
+			bmp4 = "";
+			
+			// CR RISE
+			var crText = "";
+			if(crnow != "  ***")
+			{
+				var crmin = getMinima("Creatinine", Date.now(), 10);
+				if(crmin != 0)
+				{
+					var percr = 100*(crnow - listVals["Creatinine"][crmin])/(listVals["Creatinine"][crmin]);
+					if(percr > 30)
+					{
+						crText = "Cr rise of " + Math.round(percr) + "% (" + listVals["Creatinine"][crmin] + " -> " + crnow + ") over " + Math.round((timeToDate(t1) - timeToDate(listTime["Creatinine"][crmin]))/msDay) + " days\n";		
+						
+					}
+				}
+			}		
+			chemistryData += bmp0 + "\n" + bmp1 + "\n" + bmp2 + "\n" + bmp3 +"\n" + afterTx + hemo1tx + hemo2tx + albText + bmp4 + "\n" + crText;
+			cexclude += "SODIUM||POTASSIUM||UREA NITROGEN||CHLORIDE||CO2||Creatinine||Glucose||GLU POC||eGFR(IDMS)||eGFR(DC'D 4-16-10)||ANION GAP||ANION GAP(POC)||";
+		}
+	}	
+    	if("URINE COLOR" in listVals)	//UA
+	{
+		var valList = ["URINE COLOR","Appearance","SPECIFIC GRAVITY","URINE pH","URINE BLOOD","LEUKOCYTE ESTERASE","NITRITE, URINE","URINE PROTEIN","URINE GLUCOSE","URINE KETONES","URINE BILIRUBIN", "UROBILINOGEN", "URINE ASCORBIC ACID"];
+		var t1 = getNTime(valList, "URINE", 0);	
+		var inList = getIndex(valList, t1, "URINE");
+		urineData += "UA: ";
+		var bland = true;
+		if(getValListT(listVals, "URINE COLOR", inList, "", "", "") != "Yellow" && getValListT(listVals, "URINE COLOR", inList, "", "", "") != "Colorless")
+		{
+			bland = false;
+			urineData += getValListT(listVals, "URINE COLOR", inList, "", "", "");
+			if(getValListT(listVals, "Appearance", inList, "", "", "") != "Clear")
+			{
+				urineData += "/" + getValListT(listVals, "Appearance", inList, "", "", "  ");
+			} else
+			{
+				urineData += " ";
+			}
+		} else
+		{
+			if(getValListT(listVals, "Appearance", inList, "", "", "") != "Clear")
+			{
+				bland = false;
+				urineData += getValListT(listVals, "Appearance", inList, "", "", "  ");
+			}
+		}
+		var sg = parseFloat(getValListT(listVals, "SPECIFIC GRAVITY", inList, "", "", ""));
+		if(sg != NaN && (sg <= 1.003 || sg >= 1.030))
+		{
+			urineData += getValListT(listVals, "SPECIFIC GRAVITY", inList, "", "SG: ", "  ");
+			bland = false;
+		}
+		var uph =  parseFloat(getValListT(listVals, "URINE pH", inList, "", "", ""));
+		if(uph != NaN && (uph < 5.0 || uph > 8.0))
+		{
+			urineData += getValListT(listVals, "URINE pH", inList, "", "pH: ", "");
+			bland = false;
+		}
+		//urineData += "UA: " + getValListT(listVals, "URINE COLOR", inList, "", "", "/") + getValListT(listVals, "Appearance", inList, "", "", "  ") + getValListT(listVals, "SPECIFIC GRAVITY", inList, "", "SG: ", "  ") + getValListT(listVals, "URINE pH", inList, "", "pH: ", "");
+		
+		var negList = "";
+		
+		var listNames = ["Blood","LE","Nitrite","Protein","Glucose","Ketones","Bili","Urobili","Vit C"];
+		for(var j = 4; j < valList.length; j++)
+		{
+			var tmp = getValListT(listVals, valList[j], inList, "n/a", "", "");
+			if(tmp == "NEGATIVE" || tmp == "Neg." || tmp == "none" || tmp == "Neg")
+			{
+				if(negList != "")
+					negList += "  ";
+				negList += "-" + listNames[j - 4];
+			} else
+			{
+				if(valList[j] != "URINE ASCORBIC ACID" || tmp != "n/a")
+				{
+					bland = false;
+					urineData += "<span style='color: red; font-weight: bold'>" + tmp + "</span> " + listNames[j-4] + "  ";
+				}
+			}			
+		}
+		if(bland)
+		{
+			urineData += "bland";
+		} else
+		{
+			urineData += "otherwise bland";	
+		}
+		/*
+		if(negList != "")
+		{
+			urineData += "  " + negList;
+		} else
+		{
+			
+		}*/
+		urineData += " @ " + t1 + "\n";
+		uexclude += valList.join("||") + "||";
+	}
+	if("URINE WBC/HPF" in listVals) //urine micro
+	{
+		var valList = ["URINE WBC/HPF","URINE BACTERIA","URINE RBC/HPF","SQUAM EPITH CELLS","URINE MUCUS","HYALINE CASTS","URINE WBC CASTS","URINE RBC CASTS","GRANULAR CASTS","TRI PHOSPHATE CRYSTALS","CA++ OXALATE CRYSTALS","URIC ACID CRYSTALS","URINE WBC CLUMPS","RENAL EPITH CELLS","TRANSITIONAL CELLS","URINE SPERM","BUDDING YEAST","YEAST HYPHAE","URINE EPITH CELLS","URINE CASTS","AMORPHOUS CRYSTALS","URINE CRYSTALS"];
+		var t1 = getNTime(valList, "URINE", 0);	
+		var inList = getIndex(valList, t1, "URINE");
+		var listNames = ["WBCs","Bacteria","RBCs","Squamous cells","Mucus","Hyaline casts","WBC Casts","RBC Casts","Granular casts","Triphosphate crystals","Ca++ oxalate crystals","Uric acid crystals","WBC clumps","Renal epi cells","Transitional cells","Sperm","Budding yeast","Hyphae","Epi cells","Casts","Amorphous crystals","Crystals"]
+		urineData += "Urine micro: ";
+		var ds = -1;
+		var negList = "";
+		for(var j = 0; j < valList.length; j++)
+		{
+			var tmp = getValListT(listVals, valList[j], inList, "", "", "");
+			if(tmp != "")
+			{
+				if(tmp != "none" && tmp != "None" && tmp != "NoneObserved" && tmp != "NoneObs" && tmp != "0")
+				{
+					if(ds == 1)
+						urineData += "  ";
+					urineData += "<span style='color: red; font-weight: bold'>" + tmp + "</span> " + listNames[j];
+					ds = 1;
+				} else
+				{
+					if(negList != "")
+						negList += "  ";
+					negList += "-" + listNames[j];
+				}
+			}
+			/*if(tmp == "" && valList[j] == "URINE BACTERIA")
+			{
+				if(ds == 1)
+					urineData += ",  ";
+				urineData += "no reported " + listNames[j];
+				ds = 1;
+			}*/		
+		}		
+		if(negList == "No ")
+			negList = "";
+		urineData += " " + negList + " @ " + t1 + "\n";
+		uexclude += valList.join("||") + "||";
+	}
+	if("DAU PH" in listVals || "COCAINE SCREEN" in listVals || "FENTANYL SCREEN" in listVals) //UDS
+	{
+		var valList = ["AMPHETAMINES SCREEN","BARBITURATES SCREEN","BENZODIAZEPI SCREEN","CANNABINOIDS SCREEN","COCAINE SCREEN","OPIATES SCREEN","METHADONE SCREEN","OXYCODONE SCREEN","BUPRENORPHINE SCREEN","PHENCYCLIDINE SCR", "FENTANYL SCREEN"];
+		var t1 = getNTime(valList, "URINE", 0);	
+		var inList = getIndex(valList, t1, "URINE");
+		var listNames = ["Amphetamines","Barbiturates","BZDs","Cannabinoids","Cocaine","Opiates","Methadone","Oxycodone","Buprenorphine","Phencyclidine","Fentanyl"];
+		urineData += "UDS: ";
+		var poslist = "";
+		var neglist = "";
+		for(var j = 0; j < valList.length; j++)
+		{
+			var tmp = getValListT(listVals, valList[j], inList, "", "", "");
+			if(tmp != "")
+			{
+				if(tmp == "NONE" || tmp == "None" || tmp == "NEG" || tmp == "None-Detected" || tmp == "NONE-DETECTED")
+				{
+					if(neglist != "")
+						neglist += "  ";
+					neglist += "-" + listNames[j];
+				} else
+				{
+					if(poslist != "")
+						poslist += "  ";
+					poslist += "<span style='color: red; font-weight: bold'>+" + listNames[j] + "</span>";
+				}
+			}		
+		}
+		if(poslist != "")
+		{
+			if(neglist != "")
+			{
+				urineData += poslist + "  " + neglist;
+			} else
+			{
+				urineData += poslist + "";
+			}
+		} else
+		{
+			urineData += neglist;
+		}
+		urineData += " @ " + t1 + "\n";
+		uexclude += valList.join("||") + "||";
+		uexclude += "DAU PH||DAU SP.GRAVITY||DAU CREATININE||";
+	}
+	if("Creatinine" in listVals && "Creatinine" in listVals && "Na" in listVals && "SODIUM" in listVals)
+	{
+		var valList = ["Na"];
+		var t1 = getNTime(valList, "URINE", 0);
+		var inList = getIndex(valList, t1, "URINE");
+		var nau = parseFloat(listVals["Na"][inList["Na"]].replace("&#060; ",''));	
+		var lts = "";
+		if(listVals["Na"][inList["Na"]].indexOf("&#060;") != -1)
+		{
+			lts = "&#060; ";
+		}
+		var nas = getTCV("SODIUM",t1,"SERUM||PLASMA||");
+		var cru = getTCV("Creatinine",t1,"URINE||");
+		var crs = getTCV("Creatinine",t1,"SERUM||PLASMA||");
+		var fena = 100*parseFloat(crs[0])*nau/(parseFloat(cru[0])*parseFloat(nas[0]));
+		urineData += "FENa: " + lts + fena.toFixed(2) + "% @ " + t1 + "\n";
+	}
+	if("Creatinine" in listVals && "Creatinine" in listVals && "Urea nitrogen" in listVals && "UREA NITROGEN" in listVals)
+	{
+		var valList = ["Urea nitrogen"];
+		var t1 = getNTime(valList, "URINE", 0);
+		var inList = getIndex(valList, t1, "URINE");
+		var nau = parseFloat(listVals["Urea nitrogen"][inList["Urea nitrogen"]]);	
+		var nas = getTCV("UREA NITROGEN",t1,"SERUM||PLASMA||");
+		var cru = getTCV("Creatinine",t1,"URINE||");
+		var crs = getTCV("Creatinine",t1,"SERUM||PLASMA||");
+		var fena = 100*parseFloat(crs[0])*nau/(parseFloat(cru[0])*parseFloat(nas[0]));
+		urineData += "FEUrea: " + fena.toFixed(2) + "% @ " + t1 + "\n";
+	}
+	if("Protein" in listVals && "LDH" in listVals)
+	{
+		var valList = ["Protein"];
+		var t1 = getNTime(valList, "PLEURAL FLUID", 0);
+		if(t1 != -1)
+		{
+			var inList = getIndex(valList, t1, "PLEURAL FLUID");
+			var tpp = parseFloat(listVals["Protein"][inList["Protein"]]);	
+			var tps = getTCV("Protein",t1,"SERUM||PLASMA||");
+			var ldp = getTCV("LDH",t1,"PLEURAL FLUID||");
+			var lds = getTCV("LDH",t1,"SERUM||PLASMA||");
+			if(tps[0] != -1 && ldp[0] != -1 && lds[0] != -1)
+			{
+				var lights = 0;
+				if(tpp *2 > tps[0])
+					lights++;
+				if(ldp[0] > lds[0]*0.6)
+					lights++;
+				if(ldp[0] > 162)
+					lights++;
+				if(lights > 0)
+				{
+					pleuralData += "Exudative by Light's criteria (" + lights + "/3) using pleural fluid from " + t1 + " and serum studies from " + tps[1] + ".\n";
+				} else
+				{
+					pleuralData += "Transudative by Light's criteria (" + lights + "/3) using pleural fluid from " + t1 + " and serum studies from " + tps[1] + ".\n";
+				}
+			}
+		}
+	}
+	var pexclude = "";
+	if("Color" in listVals && "Appearance" in listVals)
+	{
+		var valList = ["Color"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var color = listVals["Color"][inList["Color"]];
+		if(t1 != -1)
+			peritonealData += "Color: " + color + "  @ " + t1 + "\n";
+		valList = ["Appearance"];
+		t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var appear = listVals["Appearance"][inList["Appearance"]]
+		if(t1 != -1)
+			peritonealData += "Appearance: " + appear + "  @ " + t1 + "\n";
+		pexclude += "||Color||Appearance||";
+	}
+	if("Albumin" in listVals)
+	{
+		var valList = ["Albumin"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		if(t1 != -1)
+		{	
+			var inList = getIndex(valList, t1, "PERITONEAL FLUID");
+			var tpp = parseFloat(listVals["Albumin"][inList["Albumin"]]);
+			var tps = getTCV("Albumin",t1,"SERUM||PLASMA||"); 
+			if(tps[0] != -1)
+			{
+				var saag = tps[0] - tpp;
+				peritonealData += "SAAG: " + saag.toFixed(1) + " (" + tps[0] + " - " + tpp + ") " + " @ " + t1 + "\n";
+			}
+		}
+		if(t1 != -1)
+			peritonealData += "Albumin: " + tpp + "  @ " + t1 + "\n";		
+		pexclude += "||Albumin||";
+	}
+	if("Protein" in listVals)
+	{
+		var valList = ["Protein"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var prot = listVals["Protein"][inList["Protein"]]
+		if(t1 != -1)
+			peritonealData += "Protein: " + prot + "  @ " + t1 + "\n";
+		pexclude += "||Protein||";
+	}
+	if("RBC" in listVals)
+	{
+		var valList = ["RBC"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var RBC = listVals["RBC"][inList["RBC"]]
+		if(t1 != -1)
+			peritonealData += "RBC: " + RBC + "  @ " + t1 + "\n";
+	}
+	if("Nucleated cells" in listVals)
+	{
+		var valList = ["Nucleated cells"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var appear = listVals["Nucleated cells"][inList["Nucleated cells"]]
+		if(t1 != -1)
+			peritonealData += "Nucleated cells: " + appear + "  @ " + t1 + "\n";
+	}
+	if("PMN" in listVals)
+	{
+		var valList = ["PMN"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var PMN = listVals["PMN"][inList["PMN"]]
+		if(t1 != -1)
+			peritonealData += "PMN: " + PMN + "%  @ " + t1 + "\n";	
+	}
+	if("Lymph" in listVals)
+	{
+		var valList = ["Lymph"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var Lymph = listVals["Lymph"][inList["Lymph"]]
+		if(t1 != -1)
+			peritonealData += "Lymph: " + Lymph + "%  @ " + t1 + "\n";		
+	}
+	if("Mono" in listVals)
+	{
+		var valList = ["Mono"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var Mono = listVals["Mono"][inList["Mono"]]
+		if(t1 != -1)
+			peritonealData += "Mono: " + Mono + "%  @ " + t1 + "\n";	
+	}
+	if("Macrophages" in listVals)
+	{
+		var valList = ["Macrophages"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var Macrophages = listVals["Macrophages"][inList["Macrophages"]]
+		if(t1 != -1)
+			peritonealData += "Macrophages: " + Macrophages + "%  @ " + t1 + "\n";	
+	}
+	if("Mesothelial cells" in listVals)
+	{
+		var valList = ["Mesothelial cells"];
+		var t1 = getNTime(valList, "PERITONEAL FLUID", 0);
+		var inList = getIndex(valList, t1, "PERITONEAL FLUID");		
+		var Mes = listVals["Mesothelial cells"][inList["Mesothelial cells"]]
+		if(t1 != -1)
+			peritonealData += "Mesothelial cells: " + Mes + "%  @ " + t1 + "\n";			
+	}
+	pexclude += "||RBC||Nucleated cells||PMN||Lymph||Mono||Macrophages||Mesothelial cells||";	
+	cexclude += "PERIPHERAL BLOOD SMEAR||";
+	otherData = "";
+	var mL = 0;
+	for(var prop in listVals)
+	{
+		var pL = prop.length + listVals[prop][0].toString().length;
+		if(pL > mL)
+			mL = pL;
+	}
+	mL += 5;
+    for (var prop in listVals) 
+	{
+		if (cexclude.indexOf("||" + prop + "||") == -1) 
+		{
+			var bloodOnly = false;
+			if(prop.substr(0,3).toLowerCase() == "crp")
+				bloodOnly = true;
+			if(!bloodOnly)
+				chemistryData += printData(prop, "||SERUM||PLASMA||VENOUS BLOOD||ARTERIAL BLOOD||MIXED VENOUS BLOOD||");
+			if(!bloodOnly)
+				cbcData += printData(prop, "||BLOOD||");
+			if(bloodOnly)
+				cbcData += printData(prop, "||SERUM||PLASMA||");
+		}
+		if(uexclude.indexOf(prop + "||") == -1)
+		{
+			 urineData += printData(prop, "||URINE||");
+			 urineData += printData(prop, "||24 HR||", "24 HR");
+		}
+		pleuralData += printData(prop, "||PLEURAL FLUID||");
+		if(pexclude.indexOf("||" + prop + "||") == -1)
+		{
+			peritonealData += printData(prop, "||PERITONEAL FLUID||");
+		}
+		csfData += printData(prop, "CEREBROSPINAL");
+		var  minV = -1;
+		var prevList = "BLOOD||SERUM||PLASMA||URINE||ARTERIAL BLOOD||VENOUS BLOOD||PLEURAL FLUID||PERITONEAL FLUID||MIXED VENOUS BLOOD||24 HR||";
+		for(var j = 0; j < listVals[prop].length; j++)
+		{
+			prevList = "BLOOD||SERUM||PLASMA||URINE||ARTERIAL BLOOD||VENOUS BLOOD||PLEURAL FLUID||PERITONEAL FLUID||MIXED VENOUS BLOOD||24 HR||";
+			if(minV == -1 && prevList.indexOf(listSpecimen[prop][j] + "||") == -1 && listSpecimen[prop][j].indexOf("CEREBROSPINAL") == -1)
+			{
+				minV = j;
+				var tmpProp = prop;
+				if(prop in replaceArray)
+					tmpProp = replaceArray[prop];
+				var pf = "";
+				var pof = "";
+				if(listCrit[prop][minV] != "N")
+				{
+					pf = "<span style='color: red; font-weight: bold'>";
+					pof = "</span>";
+				}
+				var repSp = "";
+				otherData += tmpProp + " (" + listSpecimen[prop][minV] + ")" + ": " + pf + listUH[prop][minV] + pof + replicate(" " , mL - tmpProp.length - listUH[prop][minV].toString().length) + "@ " + listTime[prop][minV] + " \n";
+				prevList += listSpecimen[prop][j] + "||";
+			}	
+		}
+    }
+	if(cbcData != "")
+		cbcData = "HEMATOLOGY:" + "\n" + cbcData + "\n\n";
+	if(chemistryData != "")
+		chemistryData = "CHEMISTRY:" + "\n" + chemistryData + "\n\n";
+	if(urineData != "")
+		urineData = "URINE STUDIES:" + "\n" + urineData + "\n\n";
+	if(csfData != "")
+		csfData = "CSF STUDIES:" + "\n" + csfData + "\n\n";
+    if(pleuralData != "")
+		pleuralData = "PLEURAL FLUID STUDIES:" + "\n" + pleuralData + "\n\n";
+    if(peritonealData != "")
+		peritonealData = "PERITONEAL FLUID STUDIES:" + "\n" + peritonealData + "\n\n";
+	if(otherData != "")
+		otherData = "OTHER:" + "\n" + otherData  + "\n\n";
+}
+
+function isNumber (o) 
+{
+  return ! isNaN (o-0) && o != null;
+}
+
+var replace2array = new Array();
+replace2array["SODIUM"] = "Na";
+replace2array["POTASSIUM"] = "K";
+replace2array["CHLORIDE"] = "Cl";
+replace2array["CO2"] = "CO2";
+replace2array["UREA NITROGEN"] = "BUN";
+replace2array["CREATININE,SERUM"] = "Cr";
+replace2array["ABSOLUTE NEUTROPHIL COUNT"] = "ANC";
+replace2array["ABSOLUTE LYMPHOCYTE COUNT"] = "ALC";
+replace2array["URINE WBC/HPF"] = "Urine WBC";
+replace2array["URINE BACTERIA"] = "Urine Bacteria";
+replace2array["URINE RBC/HPF"] = "Urine RBC";
+replace2array["SQUAM EPITH CELLS"] = "Urine epis";
+replace2array["URINE MUCUS"] = "Urine Mucus";
+replace2array["HYALINE CASTS"] = "Hyaline casts";
+replace2array["URINE WBC CASTS"] = "WBC casts";
+replace2array["URINE RBC CASTS"] = "RBC casts";
+replace2array["GRANULAR CASTS"] = "Granular casts";
+replace2array["TRI PHOSPHATE CRYSTALS"] = "Triphosphate crystals";
+replace2array["CA++ OXALATE CRYSTALS"] = "Ca oxalate crystals";
+replace2array["URIC ACID CRYSTALS"] = "Uric acid crystals";
+replace2array["URINE WBC CLUMPS"] = "WBC clumps";
+replace2array["RENAL EPITH CELLS"] = "Renal epis";
+replace2array["TRANSITIONAL CELLS"] = "Transitional cells";
+replace2array["URINE SPERM"] = "Sperm";
+replace2array["BUDDING YEAST"] = "Yeast";
+replace2array["YEAST HYPHAE"] = "Hyphae";
+replace2array["URINE EPITH CELLS"] = "Urine epis";
+replace2array["URINE CASTS"] = "Casts";
+replace2array["AMORPHOUS CRYSTALS"] = "Amorphous crystals";
+replace2array["URINE CRYSTALS"] = "Crystals";
+ 
+function ff()
+{
+	var changeData = "";
+	var qnum = 0;
+	if(document.getElementById("viewchangesweek").checked)
+		qnum = 1;
+	if(document.getElementById("viewchangesall").checked)
+		qnum = 2;
+	
+	//DISPLAYED IF DISPLAYING SIGNIFICANT CHANGES IN LAB VALUES
+	if(qnum != 0)
+	{
+		for (var prop in listVals) 
+		{
+			var dexclude = "||";
+			for(var j = 0; j < listVals[prop].length; j++)
+			{
+				if(dexclude.indexOf("||" + listSpecimen[prop][j] + "||") == -1)
+				{
+					for(var k = j + 1; k < listVals[prop].length; k++)
+					{
+						if(listSpecimen[prop][j] == listSpecimen[prop][k])
+						{
+							var p1 = listVals[prop][j];
+							var p2 = listVals[prop][k];
+							var t1 = listTime[prop][j];
+							var t2 = listTime[prop][k];
+							var propa = listUH[prop][j];
+							var propb = listUH[prop][k];
+							if(listCrit[prop][j] != "N")
+								propa = "<span style='color: red; font-weight: bold'>" + propa + "</span>";
+							if(listCrit[prop][k] != "N")
+								propb = "<span style='color: red; font-weight: bold'>" + propb + "</span>";
+							if(isNumber(p1) && isNumber(p2))
+							{
+								if((p1 - p2)/p2 > 0.3 || (p2 - p1)/p2 > 0.3)
+								{
+									var tempProp = prop;
+									if(prop in replace2array)
+										tempProp = replace2array[prop];
+									if(qnum == 2 || Math.round((Date.now() - timeToDate(t2))/msDay) <= 7)
+									{
+										changeData += tempProp + ": " + propb + " -> " + propa + " over " + Math.round((timeToDate(t1) - timeToDate(t2))/msDay) + " days.\n";
+									}
+									k = listVals[prop].length;
+								}
+							}
+						}
+					}
+					dexclude += listSpecimen[prop][j] + "||";
+				}
+			}
+		}
+	}
+	var trendData = "";
+	for(var i = 0; i < listTrends.length; i++)
+	{
+		trendData += generateTrendText(listTrends[i]);
+	}
+	if(trendData != "")
+		trendData = "TREND DATA:" + "\n" + trendData + "\n\n";
+	if(changeData != "")
+		changeData = "SIGNIFICANT CHANGES:" + "\n" + changeData + "\n\n";
+	var tmpStr = changeData + cbcData + chemistryData + urineData + pleuralData + peritonealData + csfData + otherData + trendData;
+	var micro = "";
+	
+	
+	// DISPLAYING MICRO DATA
+	for(var i = 0; i < listMicro.length; i++)
+	{
+		//micro += listMicro[i] += "-------------------------\n";
+		
+		if(listMicro[i].indexOf("Gram stain") == -1 && listMicro[i].indexOf("|||||||||||||||") == -1 && listMicro[i].indexOf("Susceptibilities:") == -1 && listMicro[i].indexOf("SUSCEPTIBILITY") == -1 && listMicro[i].indexOf("NO GROWTH TO DATE; TESTING IN PROGRESS") != -1)
+		{
+			var ts = listMicroSpec[i];
+			micro += ts.split(" @ ")[0] + " - NGTD " + " @ " + ts.split(" @ ")[1] + "\n";
+		} else if(listMicro[i].indexOf("Gram stain") == -1 && listMicro[i].indexOf("|||||||||||||||") == -1 &&  listMicro[i].indexOf("Susceptibilities:") == -1 && listMicro[i].indexOf("SUSCEPTIBILITY") == -1 && listMicro[i].indexOf("NO GROWTH IN 5 DAYS") != -1)
+		{
+			var ts = listMicroSpec[i];
+			micro += ts.split(" @ ")[0] + " - No growth " + " @ " + ts.split(" @ ")[1] + "\n";
+		} else if(listMicro[i] == "")
+		{
+			var ts = listMicroSpec[i];
+			micro += ts.split(" @ ")[0] + " - pending " + " @ " + ts.split(" @ ")[1] + "\n";
+		} else
+		{
+			listMicro[i] = listMicro[i].replace("|||||||||||||||","");
+			var l1 = listMicro[i].split("\n")[0];
+			var ts = listMicroSpec[i];
+			var l2 = ts.split(" @ ")[0];
+			var l3 = l2 + " " + l1;
+			if(l3.length <= blankLength)
+			{
+				micro += l3 + " @ " + ts.split(" @ ")[1] + listMicro[i].substr(listMicro[i].indexOf(l1) + l1.length) + "\n";
+			} else
+			{
+				micro += listMicroSpec[i] + "\n" + listMicro[i] + "\n";
+			}
+		}
+	}
+	if(micro != "")
+		micro = "MICRO:" +"\n" + micro;
+	var finalData = "";
+	var tmpSplit = tmpStr.split("\n");
+	
+	// CONSOLIDATING INTO SINGLE LINES
+	for(var i = 0; i < tmpSplit.length; i++)
+	{
+		var tmpT = tmpSplit[i].split(" @ ");
+		if(tmpT.length == 2 && tmpT[0].substr(0,1) != " ")
+		{
+			var tmpA = tmpT[0].trim();
+			var tmpB = tmpT[1];
+			if(tmpB.indexOf("@") != -1)
+				tmpB = timeFormat(tmpB);
+			if(replaceTags(tmpA).length > blankLength)
+			{
+				if(replaceTags(tmpA).indexOf("  ") != -1)
+				{
+					var tmpC = tmpA.split("  ");
+					var tmpD = "";
+					var tmpI = 0;
+					while(tmpI < tmpC.length)
+					{
+						var tt = tmpD  + "  " + tmpC[tmpI];
+						if(tmpD == "")
+							tt = tmpC[tmpI];
+						if(replaceTags(tt).length > blankLength)
+						{
+							finalData += tmpD + "\n";
+							tmpD = tmpC[tmpI];
+						} else
+						{
+							tmpD = tt;
+						}
+						tmpI++;
+					}
+					tmpD += replicate(" ",blankLength - replaceTags(tmpD).length);
+					tmpD += "<span style='color:gray'> @ " + tmpB + "</span>";
+					finalData += tmpD;
+				} else
+				{
+					if(replaceTags(tmpA).indexOf(" ") != -1)
+					{
+						var tmpC = tmpA.split(" ");
+						var tmpD = "";
+						var tmpI = 0;
+						while(tmpI < tmpC.length)
+						{
+							var tt = tmpD  + " " + tmpC[tmpI];
+							if(tmpD == "")
+								tt = tmpC[tmpI];
+							if(replaceTags(tt).length > blankLength)
+							{
+								finalData += tmpD + "\n";
+								tmpD = tmpC[tmpI];
+							} else
+							{
+								tmpD = tt;
+							}
+							tmpI++;
+						}
+						tmpD += replicate(" ",blankLength - replaceTags(tmpD).length);
+						tmpD += "<span style='color:gray'> @ " + tmpB + "</span>";
+						finalData += tmpD;
+					}
+					else
+					{
+						finalData += tmpSplit[i];
+					}
+				}
+			} else
+			{
+				var tmpI2 = i + 1;
+				var exitLoop = false;
+				while(tmpI2 < tmpSplit.length && !exitLoop)
+				{
+					var tmpT2 = tmpSplit[tmpI2].split(" @ ");
+					if(tmpT2.length == 2)
+					{
+						var tmpA2 = tmpT2[0].trim();
+						var tmpB2 = timeFormat(tmpT2[1]);
+						if(replaceTags(tmpA2).length + replaceTags(tmpA).length < blankLength - 2 && tmpB2 == tmpB ) //&& replaceTags(tmpA2).indexOf("  ") == -1
+						{
+							tmpA += "  " + tmpA2;
+							i = tmpI2;
+							tmpI2++;
+						} else
+						{
+							exitLoop = true;
+						}
+					} else
+					{
+						exitLoop = true;
+					}
+				}
+				finalData += tmpA + replicate(" ",blankLength - replaceTags(tmpA).length) + "<span style='color:gray'> @ " + tmpB + "</span>";
+			}
+		} else
+		{
+			if(tmpT.length == 2)
+			{
+				finalData += tmpT[0] + replicate(" ",blankLength - replaceTags(tmpT[0]).length) + "<span style='color:gray'> @ " + timeFormat(tmpT[1]) + "</span>";
+			} else
+			{
+				finalData += tmpSplit[i];
+			}
+		}
+		finalData += "\n";		
+	}
+	var ts2 = micro.split("\n");
+	for(var i = 0; i < ts2.length; i++)
+	{
+		var tmpT = ts2[i].split(" @ ");
+		if(tmpT.length == 2)
+		{
+			var tmpA = tmpT[0].trim();
+			var tmpB = tmpT[1];
+			if(tmpA.length < blankLength)
+				tmpA += replicate(" ",blankLength- tmpA.length);
+			finalData += tmpA + "<span style='color:gray'> @ " + tmpB + "</span>";
+		} else
+		{
+			finalData += ts2[i];
+		}
+		finalData += "\n";
+	}
+	var xmlhttp = new Array();
+	numberMeds = 0;
+	calledMeds = 0;
+	listMedID = new Array();
+	if(medList.length != 0)
+		finaData = "";
+	for(var i = 0; i < medList.length; i++)
+	{
+		var mL = medList[i];
+		var medName = "";
+		var medRest = "";
+		var medDose = "";
+		//inpatient meds
+		if(medListOutpatient == false)
+		{
+			if(mL.indexOf("  ") != -1)
+			{
+			medName = mL.split("  ")[0];
+			xmlhttp.push(new XMLHttpRequest());
+			xmlhttp[numberMeds].onreadystatechange = function() 
+			{
+				if (this.readyState == 4 && this.status == 200) 
+				{
+	  	   			var xmldoc = this.responseXML;
+					listMedID.push(xmldoc.getElementsByTagName("rxcui")[0].childNodes[0].nodeValue);
+					allCalled();
+    				}
+			};
+			var url = "https://web.archive.org/web/20230117075429/https://rxnav.nlm.nih.gov/REST/approximateTerm?term=" + medName.replace(" ","%20") + "&maxEntries1";
+			xmlhttp[numberMeds].open("GET", url, true);
+			xmlhttp[numberMeds].send();		
+			numberMeds++;
+			}
+			finalData += mL + "\n";
+		} else
+		{
+			var medsplit = "";
+			var msAmount = ["ONE-HALF ", "ONE ", "ONE AND ONE-HALF ", "TWO ", "TWO AND ONE-HALF ", "THREE ", "THREE AND ONE-HALF ", "FOUR ", "FOUR AND ONE-HALF ", "FIVE ", "FIVE AND ONE-HALF ", "SIX ", "SIX AND ONE-HALF ", "SEVEN ", "SEVEN AND ONE-HALF ", "EIGHT ", "EIGHT AND ONE-HALF ", "NINE ", "NINE AND ONE-HALF ", "TEN "];
+			var msMult = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
+			for (var j = 0; j < 100; j++)
+			{
+				msAmount.push(j + " ");
+				msMult.push(j);
+			}
+			var medMult = 1;
+			var medSprays = "";
+
+			for(var j = 0; j < msAmount.length; j++)
+			{
+			
+				if(mL.indexOf(msAmount[j] + "TABLET") != -1 || mL.indexOf(msAmount[j] + "CAP") != -1)
+				{
+					mL = mL.replace(msAmount[j] + "TABLET", " TAKE " + msAmount[j] + "TABLET").replace(msAmount[j] + "CAP", " TAKE " +msAmount[j] + "CAP");
+					medMult = msMult[j];
+				}
+				if(mL.indexOf(msAmount[j] + "SPRAY") != -1)
+					medSprays = msMult[j] + "x ";
+				if(mL.indexOf(msAmount[j] + "UNIT") != -1)
+					medSprays = msMult[j] + "u ";
+			}
+			var msTime = ["AT BEDTIME", "EVERY MORNING", "ONCE DAILY", "TWICE A DAY", "THREE TIMES A DAY", "FOUR TIMES A DAY", "FIVE TIMES A DAY", "SIX TIMES A DAY", "SEVEN TIMES A DAY", "EIGHT TIMES A DAY", "EVERY 3 HOURS", "EVERY 4 HOURS", "EVERY 5 HOURS", "EVERY 6 HOURS", "EVERY 2 HOURS", "1 HOUR BEFORE SEXUAL RELATIONS", "TWICE DAILY WITH A MEAL OR FOOD ", "THREE TIMES A DAY WITH A MEAL OR FOOD ", "FOUR TIMES A DAY WITH A MEAL OR FOOD ", "ONCE DAILY WITH A MEAL OR FOOD "];
+			var msShortTime = ["qhs", "qam", "qd", "bid", "tid", "qid", "5x/day","6x/day","7x/day","8x/day","q3h", "q4h", "q5h","q6h","q2h","1hr before sex", "bid w/f", "tid w/f", "qid w/f", "qd w/f"];
+			var mslist = ["  "," TAKE "," APPLY "," INJECT "," INSTILL "," USE ", " SPRAY ", " APPLY ", " INSERT "];
+			var medTime = "";	
+			var medTimeLong = "";
+			for(var j = 0; j < mslist.length; j++)
+			{
+				if(mL.indexOf(mslist[j]) != -1)
+					medsplit = mslist[j];
+			}
+			for(var j = 0; j < msTime.length; j++)
+			{
+				if(mL.indexOf(msTime[j]) != -1)
+				{
+					if(mL.indexOf(msTime[j] + " AS NEEDED") != -1)
+					{
+						medTime = msShortTime[j] + " prn";	
+					} else
+					{
+						medTime = msShortTime[j];
+					}				
+					medTimeLong = msTime[j];
+				}
+			}
+			var mLDS = mL.replace("B12","BTwelve").replace("D3","DThree");
+			var dosesearch = /^[^\d]*(\d+)/;
+		    	medDose = dosesearch.exec(mLDS)[1];
+			medName = mL.split(medDose)[0];
+			var medUnit = mL.substr(mL.indexOf(medDose) + medDose.length).split(medsplit)[0];
+			if(medsplit == "")
+				medUnit = mL.substr(mL.indexOf(medDose) + medDose.length).split(medTimeLong)[0];
+			if(medTimeLong == "")
+				medUnit = mL.substr(mL.indexOf(medDose) + medDose.length);
+			xmlhttp.push(new XMLHttpRequest());
+			xmlhttp[numberMeds].onreadystatechange = function() 
+			{
+				if (this.readyState == 4 && this.status == 200) 
+				{
+	  	   			var xmldoc = this.responseXML;
+					listMedID.push(xmldoc.getElementsByTagName("rxcui")[0].childNodes[0].nodeValue);
+					allCalled();
+    				}
+			};
+			var url = "https://web.archive.org/web/20230117075429/https://rxnav.nlm.nih.gov/REST/approximateTerm?term=" + medName.replace(" ","%20") + "&maxEntries1";
+			xmlhttp[numberMeds].open("GET", url, true);
+			xmlhttp[numberMeds].send();		
+			numberMeds++;
+			finalData += medName + " " + medSprays + medDose*medMult + "" + medUnit + " " + medTime + "\n"
+		}
+		
+		
+	}
+	finalData = finalData.replace(/\n/g,"<br>");
+	finalData = finalData.replace(/NEWLINECOMMENT/g,"\\n");
+	finalData = finalData.replace(/\s/g,"&nbsp;");
+	finalData = finalData.replace(/&nbsp;(?=[^<]*>)/g, " ");
+	finalData = finalData.replace(/\<ss\>/g,"<span style='color: red; font-weight: bold'>");
+	edtData.innerHTML = "" + finalData + "";
+	clipb.value = "";
+}
+function allCalled()
+{
+	calledMeds++;
+	if(calledMeds == numberMeds)
+	{
+		var medString = "";
+		for(var j = 0; j < listMedID.length; j++)
+		{
+			medString += listMedID[j];
+			if(j != listMedID.length - 1)
+				medString += "+";
+		}
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+  	   			var xmldoc = this.responseXML;
+				var interactions = xmldoc.getElementsByTagName("fullInteractionType");
+				var intString = "";
+				for(var i = 0; i < interactions.length; i++)
+				{
+					var pairs = interactions[i].getElementsByTagName("interactionPair");
+					for(var j = 0; j < pairs.length; j++)
+					{
+						var drugs = pairs[j].getElementsByTagName("minConceptItem");
+						for(var k = 0; k < drugs.length; k++)
+						{
+							if(k != 0)
+								intString += " & ";
+							intString += drugs[k].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+						}
+						intString += ": " + pairs[j].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br>";
+					}
+				}
+				edtData.innerHTML += "<br>DRUG DRUG INTERACTIONS:<br>-----------------------<br>" + intString
+			}
+		};
+		var url = "https://web.archive.org/web/20230117075429/https://rxnav.nlm.nih.gov/REST/interaction/list.xml?rxcuis=" + medString;
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+	}
+}
+function pad(str,num, char) {
+ if (char===undefined) {char=" ";}
+ return String(replicate(char,num)+str).slice(0-num);
+}
+ 
+function replicate(char,num) {
+ if(num <= 0)
+	return "";
+ return new Array(num+1).join(char);
+}
+function myTrim(x) {
+ return x.replace(/^\s+|\s+$/gm,'');
+}
+
+</script>
+<!-- Favicons
+ ================================================== --><link rel="shortcut icon" href="https://web.archive.org/web/20230117075429im_/http://www-personal.umich.edu/%7Efmhoward/favicon.png">
+<meta name="GENERATOR" content="MSHTML 9.00.8112.16696"></head>
+<body onload="loadFunction()" style="margin: 0px; background-color: rgb(255, 251, 240);" class="vsc-initialized"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 1px;"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20230117075429/http%3A//www-personal.umich.edu/~fmhoward/formatter.html" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside" style="display: none;">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://www-personal.umich.edu/~fmhoward/formatter.html" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20230117075429"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/http://www-personal.umich.edu/~fmhoward/formatter.html" title="See a list of every capture for this URL">29 captures</a><div class="r" title="Timespan for captures of this URL">10 Jan 2018 - 17 Jan 2023</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="725" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px;"></div><div class="mt" style="display: none; width: 2px; height: 27px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20220819061635/http://www-personal.umich.edu/~fmhoward/formatter.html" title="19 Aug 2022"><strong>Aug</strong></a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 07:54:29 Jan 17, 2023">JAN</td>
+            <td class="f" nowrap="nowrap">Feb</td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20230113080953/http://www-personal.umich.edu/~fmhoward/formatter.html" title="08:09:53 Jan 13, 2023"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0"></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 07:54:29 Jan 17, 2023">17</td>
+            <td class="f" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20211022161553/http://www-personal.umich.edu/~fmhoward/formatter.html" title="22 Oct 2021"><strong>2021</strong></a></td>
+            <td class="c" id="displayYearEl" title="You are here: 07:54:29 Jan 17, 2023">2023</td>
+            <td class="f" nowrap="nowrap">2024</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html#" title="Share via My Web Archive" style="display: none;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: inline-block;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web" style="display: none;"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20230117075429/http://web.archive.org/screenshot/http://www-personal.umich.edu/~fmhoward/formatter.html" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html#" data-url="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html#" data-url="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/archiveteam);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/archiveteam" target="_new"><span class="wm-title">Archive Team</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  <img align="right" src="http://archiveteam.org/images/e/e6/Archiveteam.jpg" width="200"> Formed in 2009, the Archive Team (not to be confused with the archive.org Archive-It Team) is a rogue archivist collective dedicated to saving copies of rapidly dying or deleted websites for the sake of history and digital heritage. The group is 100% composed of volunteers and interested parties, and has expanded into a large amount of related projects for saving online and digital history.
+<p>
+History is littered with hundreds of conflicts over the future of a community, group, location or business that were "resolved" when one of the parties stepped ahead and destroyed what was there. With the original point of contention destroyed, the debates would fall to the wayside. Archive Team believes that by duplicated condemned data, the conversation and debate can continue, as well as the richness and insight gained by keeping the materials. Our projects have ranged in size from a single volunteer downloading the data to a small-but-critical site, to over 100 volunteers stepping forward to acquire terabytes of user-created data to save for future generations.
+</p><p>
+The main site for Archive Team is at <a href="http://www.archiveteam.org/">archiveteam.org</a> and contains up to the date information on various projects, manifestos, plans and walkthroughs.
+</p><p>
+This collection contains the output of many Archive Team projects, both ongoing and completed. Thanks to the generous providing of disk space by the Internet Archive, multi-terabyte datasets can be made available, as well as in use by the <a href="http://archive.org/web/web.php">Wayback Machine</a>, providing a path back to lost websites and work. 
+</p><p>
+Our collection has grown to the point of having sub-collections for the type of data we acquire. If you are seeking to browse the contents of these collections, the Wayback Machine is the best first stop. Otherwise, you are free to dig into the stacks to see what you may find.
+</p><p>
+<b>The Archive Team Panic Downloads</b> are full pulldowns of currently extant websites, meant to serve as emergency backups for needed sites that are in danger of closing, or which will be missed dearly if suddenly lost due to hard drive crashes or server failures. 
+</p><p>
+	</p></div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/archiveteam_urls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/archiveteam_urls" target="_new"><span class="wm-title">Archive Team: URLs</span></a></div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./CPRS Lab Formatter_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./CPRS Lab Formatter_files/iconochive.css"><div class="wb-autocomplete-suggestions "></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/formatter.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://www-personal.umich.edu/~fmhoward/formatter.html","20230117075429",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt","https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+<!-- Intro Section   ================================================== -->
+<div id="popupform" style="display: none">
+<div id="close" onclick="document.getElementById(&#39;popupform&#39;).style.display = &#39;none&#39;;">
+</div>
+<div id="box">
+<b>1. GENERAL TERMS AND CONDITIONS</b><br>
+Thank you for visiting bit.ly/cprsformat (the 'Site' or 'website'). 
+Please read the Terms and Conditions contained in this document 
+carefully since any use of this site constitutes your acceptance of the 
+Terms and Conditions set out herein. If you do not agree to these terms 
+and conditions, please do not use this website.<br>
+Throughout this site, the terms 'we', 'us', 'our', and 'CPRS Formatter' 
+refer to Frederick Howard, and any of his direct and indirect 
+subsidiaries. 'You' refers to any person accessing and/or using this 
+website.<br><br>
+<b>A) CHANGES</b><br>
+We reserve the right to change, modify, add or remove these Terms and 
+Conditions at any time, and you agree (including by virtue of your 
+continued use of our site) to be bound by any such changes. Unless 
+explicitly stated otherwise, any new features or functionality 
+(including, without limitation, video and related projects) that augment
+ or enhance our site shall be subject to these Terms and Conditions. 
+Please check these Terms and Conditions periodically for any 
+modifications. The most current version of these Terms of Use can be 
+viewed at any time at: bit.ly/cprsformat.<br><br>
+<b>B) LINKS</b><br>
+The Site may contain links to third-party sites or resources. We are not
+ responsible for the availability of external sites or resources linked 
+to the Site, and does not endorse and is not responsible or liable for 
+any content, advertising, products or other materials on or available 
+from such sites or resources. Transactions that occur between you and 
+any third party are strictly between you and the third party and are not
+ the responsibility of the Site. Because we are not responsible for the 
+availability or accuracy of these outside resources or their contents, 
+you should review the terms and conditions and privacy policies of these
+ linked sites, as their policies may differ from ours.<br>
+We welcome links to the Site. You may establish a hypertext link to the 
+Site, provided that the link does not state or imply any sponsorship or 
+endorsement of your site by CPRS Formatter. We grant a nonexclusive, 
+limited permission ('Permission') to display the Trademarks contained on
+ this domain name, brand names and logos to the owner(s) of any web 
+sites ('Owner') that would like to develop a link between their site and
+ the corresponding website owned by the Site ('CPRS Formatter Site'). 
+Links to a CPRS Formatter Site other than the one using the 
+bit.ly/cprsformat domain name, brand names or logos are not permitted. 
+The materials on the Owner's site shall not imply any association with 
+or relation to CPRS Formatter or imply in any way that any materials 
+from our CPRS Formatter Site are maintained within Owner's web site.<br>
+No changes or modifications to the bit.ly/cprsformat domain name, brand 
+names or logos may be made. Use of the bit.ly/cprsformat domain name, 
+brand names or logos for purposes other than linking to the CPRS 
+Formatter Site is expressly forbidden. The domain names, brand names and
+ logos must not be used or associated with any obscene, scandalous, 
+inflammatory, pornographic, indecent, profane, defamatory or unlawful 
+site or materials in any way, or in any manner that would adversely 
+affect the name, reputation and goodwill of CPRS Formatter. We retain 
+and reserve all rights in and to CPRS Formatter's trade names, 
+trademarks, copyrights and all other intellectual property with respect 
+to its domain names, brand names and logos. CPRS Formatter reserves the 
+right to cancel the Permission at any time and for any reason. Upon 
+receipt of such notification, use of the domain names, brand names or 
+logos must cease and the link between the web sites must terminate. Use 
+of CPRS Formatter trademarks, trade names, logos, copyrighted material 
+or any other intellectual property of CPRS Formatter for any purpose not
+ stated herein is expressly forbidden.<br><br>
+<b>C) LEGALLY-COMPELLED DISCLOSURE OF USER INFORMATION</b><br>
+You agree that in the event we receive a subpoena issued by a court or 
+from a law enforcement or government agency, we shall comply with such 
+subpoenas without your consent or prior notice to you and may disclose 
+your IP address, username, name, IP location or other information in 
+response thereto.<br><br>
+<b>D) SYSTEMS RELIABILITY</b><br>
+CPRS Formatter aims to keep the Site available twenty-four (24) hours a 
+day, seven (7) days a week and to maintain saved information. However, 
+CPRS Formatter shall not be liable for lost altered, or corrupted 
+information or non-availability of the Site.<br><br>
+<b>E) PROHIBITED ACTIVITIES</b><br>
+You are prohibited from doing any act that CPRS Formatter in its 
+absolute discretion may deem to be inappropriate and/or would be deemed 
+to be an unlawful act or is prohibited by any laws applicable to this 
+website including but not limited to:<br>
+� Any act that would constitute a breach of either the privacy 
+(including uploading private information without the concerned 
+individual's consent) or any other of the legal rights of individuals<br>
+� Using this website to defame or libel CPRS Formatter, its employees or
+ other individuals or acting in such a way that brings into disrepute 
+the good name of CPRS Formatter;<br>
+� Uploading files that contain viruses that may cause damage to the 
+property of CPRS Formatter or the property of other individuals; and<br>
+� Posting or transmitting to this website any non-authorized material 
+including but not limited to material that is in our opinion likely to 
+cause annoyance, detrimental to or in violation of CPRS Formatter's or 
+any third party�s systems or network security, libelous, defamatory, 
+racist, obscene, threatening, pornographic, profane or is otherwise 
+unlawful.<br><br>
+<b>F) DISCLAIMER OF WARRANTIES AND LIABILITY</b><br>
+Neither CPRS Formatter nor its suppliers or licensors makes any warranty
+ whatsoever, including without limitation, that the operation of the 
+Site will be uninterrupted or error-free; that any defects will be 
+corrected; that the Site, including the server that makes it available, 
+is free of viruses or other harmful components; or as to the accuracy, 
+completeness, reliability, availability, suitability, quality, 
+non-infringement, operation or result obtained from the use of any 
+Content, product or service provided on, accessible from or distributed 
+through the Site.<br>
+THE SITE AND ALL CONTENT, PRODUCTS AND SERVICES INCLUDED IN OR 
+ACCESSIBLE FROM THE SITE ARE PROVIDED 'AS IS' AND WITHOUT WARRANTIES OR 
+REPRESENTATIONS OF ANY KIND (EXPRESS, IMPLIED AND STATUTORY, INCLUDING 
+BUT NOT LIMITED TO THE WARRANTIES OF TITLE AND NONINFRINGEMENT AND THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE), ALL OF WHICH CPRS FORMATTER DISCLAIMS TO THE FULLEST EXTENT 
+PERMITTED BY LAW. YOUR USE OF THE SITE AND ITS CONTENT, PRODUCTS AND 
+SERVICES IS AT YOUR SOLE RISK.<br>
+To the extent permitted under applicable law, no responsibility is 
+assumed for any injury and/or damage to persons, animals or property as a
+ matter of products liability, negligence or otherwise, or from any use 
+or operation of any ideas, instructions, methods, products or procedures
+ contained in the Site. Medical and health care providers should 
+exercise their own independent clinical judgment. No suggested test or 
+procedure should be carried out unless, in the provider's judgment, its 
+use is justified. Because of rapid advances in the medical sciences, we 
+recommend that the independent verification of diagnoses, indications 
+and drug dosages should be made. Discussions, views, and recommendations
+ as to medical or health care procedures, methods, products, choice of 
+drugs, and drug dosages are the responsibility of the authors.<br>
+TO THE EXTENT PERMITTED UNDER APPLICABLE LAW, IN NO EVENT SHALL CPRS 
+FORMATTER OR ITS SUPPLIERS OR LICENSORS BE LIABLE FOR ANY DAMAGES 
+(INCLUDING, WITHOUT LIMITATION, CONSEQUENTIAL, SPECIAL, INCIDENTAL, 
+INDIRECT, OR SIMILAR DAMAGES, PERSONAL INJURY (INCLUDING DEATH), LOSS OF
+ PROFITS, CORRUPTION OR LOSS OF DATA, BUSINESS INTERRUPTION OR ANY OTHER
+ COMMERCIAL DAMAGES OR LOSSES) ARISING OUT OF OR IN CONNECTION WITH THE 
+USE OR PERFORMANCE OF THE SITE OR ITS CONTENT, PRODUCTS OR SERVCES, OR 
+SHALL THE LIABILITY OF CPRS FORMATTER OR ITS SUPPLIERS AND LICENSORS 
+EXCEED A SUM EQUAL TO THE FEES PAID BY YOU HEREUNDER, EVEN IF ADVISED OF
+ THE POSSIBILITY OF SUCH DAMAGES.<br>
+CPRS Formatter does not claim ownership, endorse or take responsibility 
+for any third-party products, information, guidelines, materials or 
+services that may be offered, advertised, provided or displayed on the 
+Site or incorporated in the Content, products or services contained on, 
+accessible from or distributed through the Site.<br><br>
+<b>G) EXPORT RESTRICTIONS</b><br>
+Software from this Site may be further subject to United States Export 
+laws, rules and regulations, as amended from time to time. No software 
+from this Site may be downloaded or exported (i) into (or to a national 
+or resident of) Cuba, Iraq, Libya, North Korea, Iran, Syria, Sudan or 
+any other country to which the United States has embargoed goods; or 
+(ii) anyone on the United States Treasury Department's list of Specially
+ Designated Nationals or the U.S. Commerce Department's Table of Deny 
+Orders. By downloading or using the software, you represent and warrant 
+that you are not located in, under the control of, or a national or 
+resident of any such country or on any such list.<br><br>
+<b>H) MOBILE SERVICES</b><br>
+If CPRS Formatter permits or makes available to you the ability to: (a) 
+upload content to the website via your mobile telephone and/or tablet 
+(�mobile device'), (b) receive and reply to messages, or to access or 
+make posts using text messaging, (c) browse the site from your mobile 
+device or (d) to access features through a mobile application you have 
+downloaded and installed on your mobile device (collectively 'Mobile 
+Services'), your mobile carrier's standard data, Internet, messaging and
+ other service fees and charges apply to your use of, and access to, the
+ Mobile Services, and you are solely responsible for all such fees and 
+charges. The Mobile Services may not be compatible with all mobile 
+devices, carriers, and services, and CPRS Formatter does not make any 
+representations or warranties regarding such compatibility. You are 
+solely responsible for ensuring that your mobile device is compatible 
+with the type of content being provided through the Mobile Services. You
+ understand that content delivered as part of the Mobile Services may be
+ delivered to your device through premium mobile services and 
+acknowledge that you are solely and exclusively responsible for any 
+charges for such services, including but not limited to any roaming 
+charges.<br>
+You may be given the option to register to receive commercial messages 
+from CPRS Formatter via your mobile device. You understand that you may 
+be charged by your wireless service provider in connection with the 
+receipt of such messages. You may 'opt out' of receiving future messages
+ by following the instructions provided (i) in the wireless messages or 
+(ii) on the website where you registered to receive such messages.<br><br>
+<b>I) JURISDICTION AND GOVERNING LAW</b><br>
+The CPRS Formatter products, services, materials, offers and information
+ appearing on this Site are intended for users and/or customers in the 
+United States of America only. CPRS Formatter makes no representation 
+that the products, services, and content of this website are appropriate
+ or available in locations other than the United States of America.<br>
+You and CPRS Formatter agree that any controversy or claim arising from 
+or pertaining to the use of this website shall be governed by the laws 
+of the State of Delaware, USA, without giving effect to its 
+choice-of-law provisions, and be submitted to the exclusive jurisdiction
+ of the courts of the State of Delaware, USA.<br><br>
+<b>2. PRIVACY POLICY</b><br>
+CPRS Formatter is committed to maintaining your confidence and trust 
+with respect to the privacy of the personal information we collect from 
+you. Please read this privacy policy carefully to understand our 
+practices about how we collect, use and share your personal information.<br><br>
+<b>A) ABOUT OUR PRIVACY POLICY</b><br>
+This privacy policy describes how the personal information that is 
+collected when you visit the Site, application or product that posts a 
+link to this privacy policy ('Service') will be used by the CPRS 
+Formatter company that owns the Service ('CPRS Formatter,' 'we,' 'us' or
+ 'our'). This policy may be supplemented by additional privacy terms or 
+notices set forth on certain areas of the Service.<br><br>
+<b>B) INFORMATION WE COLLECT</b><br>
+The Service collects information from you in two ways: directly from 
+your input and automatically through the Service's technologies.<br>
+Information Collected Automatically<br>
+The Service also automatically collects, through our servers and the use
+ of cookies (small text files sent to your computer), web beacons (also 
+known as clear or single pixel .gifs) and other technologies, 
+information that tells us how you use the Service, such as:<br>
+ - Internet Protocol ('IP') address used to connect your computer to the Internet;<br>
+ - Computer, device and connection information, such as browser type and
+ version, operating system, mobile platform and unique device identifier
+ ('UDID') and other technical identifiers;<br>
+ - Uniform Resource Locator ('URL') click stream data, including date 
+and time stamp, referring and exit URLs, search terms you used, and 
+pages you visited or searched for on the Service; and<br>
+ - For location-aware services, the physical location of your device in 
+order to provide you with more relevant content for where you are in the
+ world.<br>
+We may use and disclose information that does not reveal your identity 
+or permit direct association with any specific individual, such as 
+browser and device information, anonymous usage data and aggregated 
+information, for any purpose, except where we are restricted by law. If 
+we combine non-personal information with personal information, the 
+combined information will be treated as personal information for as long
+ as it remains combined.<br>
+You can control cookies through your browser's settings and other tools.
+ However, if you block certain cookies, you may not be able to register,
+ login to the Service, access certain parts of the Service or make full 
+use of the Service.<br><br>
+<b>C) USE OF YOUR INFORMATION</b><br>
+We may use your personal information to:<br>
+ - Provide the Service to you, such as allow access to or delivery of 
+our products or services, process or fulfill an order or transaction, or
+ administer surveys or promotional programs;<br>
+ - Respond to your requests, inquiries, comments or concerns;<br>
+ - Provide technical, product and other support and help keep the Service working, safe and secure;<br>
+ - Offer you customized content and individualized personalization of 
+the Service to make it more relevant to your interests and needs;<br>
+ - Enhance, evaluate and improve the Service, its advertisements and 
+promotional campaigns and our products and services and to develop new 
+products and services;<br>
+ - Identify and analyze usage trends, including for the purposes of 
+research, audits, reporting and paying royalties and license fees to 
+third-party content providers;<br>
+ - Notify you about changes or updates to the Service and our products and services; and<br>
+ - Provide you special offers, promotions, surveys and other information
+ about the Service as well as products, events and services of ours, our
+ affiliates and non-affiliated third parties such as societies and 
+sponsors.<br>
+We may on occasion also match or combine the personal information that 
+you provide with information that we obtain from other sources or that 
+is already in our records, whether collected online or offline or by 
+predecessor or affiliated group companies, for the purposes described 
+above.<br><br>
+<b>D) DISCLOSURE OF YOUR INFORMATION</b><br>
+We may share your personal information with:<br>
+ - Relevant agents, representatives, joint ventures, and entities for 
+which we are acting as an agent, licensee or publisher, such as 
+societies and sponsors;<br>
+ - Applicable suppliers and service providers, including editors, 
+reviewers, credit card processors, customer support, email service 
+providers, mailing houses and shipping agents, and IT service providers;
+ and<br>
+ - to assist us with producing and delivering our products and services,
+ developing and operating our businesses, systems and applications, 
+processing payments, customer support, marketing, promotion and 
+communications and for other purposes set forth in this privacy policy.<br>
+We also may share your personal information with our affiliated group 
+companies worldwide and with societies, sponsors and other 
+non-affiliated third parties that wish to send you information about 
+their products and services that may be of interest to you as determined
+ by your choices in managing your communications preferences following 
+the process described below.<br>
+If the Service offers a content database or learning service 
+('Subscription Service') and you access the Subscription Service through
+ an institution-sponsored subscription, your personal information and 
+certain usage data gathered through the Subscription Service, such as 
+the number of items you downloaded, any non-subscribed items you 
+accessed, and test scores, may be shared with your institution for the 
+purposes of usage analysis, subscription management, course management 
+and testing and remediation. If your institution is a corporation or 
+other business entity, additional usage data, such as the types of 
+records you viewed and the number of searches you ran, also may be 
+shared for the purposes of cost attribution and departmental budgeting.<br>
+We also may need to disclose your personal information:<br>
+ - to respond to or comply with any law, regulation, subpoena, court order or other legal obligation;<br>
+ - to enforce and protect our rights and properties;<br>
+ - to detect, investigate and help prevent security threats, fraud or other malicious activity;<br>
+ - to protect the rights, property or safety of our users, employees or others; and<br>
+ - if CPRS Formatter, the Service or a related asset or line of business
+ is acquired by, transferred to or merged with another company.<br>
+The Service may let you post and share personal information, comments, 
+materials and other content. Any information you disclose publicly may 
+be collected and used by others, may be indexable by search engines, and
+ might not be able to be removed. Please be careful when disclosing 
+personal information in these public areas.<br><br>
+<b>E) YOUR CHOICES AND COMMUNICATIONS PREFERENCES</b><br>
+You can manage your communications preferences when you register with 
+the Service, by updating your account preferences, by using the 
+'opt-out' or unsubscribe mechanism or other means provided within the 
+communications that you receive from us or by contacting us. We reserve 
+the right to notify you of changes or updates to the Service whenever 
+necessary.<br><br>
+<b>F) ACCESS AND ACCURACY OF YOUR INFORMATION</b><br>
+The Service may allow registered users to access their account 
+information and make corrections or updates upon log in at any time. The
+ accuracy of such information is solely the responsibility of the user. 
+You may also request access to other personal information about you that
+ may be held in the Service. If you request to deactivate your account 
+or delete your personal information, we will endeavor to fulfill your 
+request but some personal information may persist in backup copies for a
+ certain period of time and may be retained as necessary for legitimate 
+business purposes or to comply with our legal obligations.<br><br>
+<b>G) DATA SECURITY</b><br>
+CPRS Formatter takes precautions to safeguard your personal information 
+against loss, theft and misuse and unauthorized access, disclosure, 
+alteration and destruction through the use of appropriate 
+administrative, physical and technical security measures.<br><br>
+<b>H) CROSS-BORDER TRANSFER OF YOUR INFORMATION</b><br>
+Your personal information may be transferred to other countries for 
+processing. By using the Service you consent to the transfer of 
+information to countries outside of your country of residence, which may
+ have different personal data protection rules than in your country.<br><br>
+<b>I) CHANGES TO OUR PRIVACY POLICY</b><br>
+We may change this privacy policy from time to time. Any changes will be posted on this page with an updated revision date.<br>
+</div>
+</div>
+<div style="display:block; width: 870px; height: 500px;margin-left: auto; margin-right:auto;">
+<div style="border-radius: 5px; border-width: 1px 2px 2px 1px; border-style: solid; border-color: rgb(221, 221, 221) rgb(153, 153, 153) rgb(153, 153, 153) rgb(221, 221, 221); margin: 5px auto; width: 870px; height: 464px; background-color: rgb(240, 240, 240);"><section id="intro">
+<header style="border-radius: 5px 5px 0px 0px; border-width: 0px 0px 1px 0px; border-style: solid; border-color: white; margin: 0px 0px 5px; width: 861px; height: 21px; color: black; padding-left: 10px; line-height: 20px; font-family: Segoe UI; background-color: rgb(19, 47, 121); border-image: none;  background: linear-gradient(rgb(152,180,208),rgb(185,209,234)); font-weight: bold; font-size: 11px;" class="row">CPRS Lab Formatter v1.0.4</header><!-- Header End -->
+<div style="float:left; font-family: Segoe UI; font-size: 11px; height:400px; width: 140px; margin-left: 5px; ">
+<table id="trendTable" style="font-family: Segoe UI; font-size: 11px; "><tbody><tr><td>Trend:</td><td>Single</td><td>Week</td><td>&nbsp;All</td></tr><tr><td>CBC</td><td><input title="Single CBC" onclick="ff()" type="radio" id="CBCsingle" name="CBC" checked=""></td><td><input title="Week CBC" onclick="ff()" type="radio" id="CBCweek" name="CBC"></td><td><input title="All CBC" onclick="ff()" type="radio" id="CBCall" name="CBC"></td></tr><tr><td>Diff</td><td><input title="Single Diff" onclick="ff()" type="radio" id="Diffsingle" name="Diff" checked=""></td><td><input title="Week Diff" onclick="ff()" type="radio" id="Diffweek" name="Diff"></td><td><input title="All Diff" onclick="ff()" type="radio" id="Diffall" name="Diff"></td></tr><tr><td>Smear</td><td><input title="Single Smear" onclick="ff()" type="radio" id="Smearsingle" name="Smear" checked=""></td><td><input title="Week Smear" onclick="ff()" type="radio" id="Smearweek" name="Smear"></td><td><input title="All Smear" onclick="ff()" type="radio" id="Smearall" name="Smear"></td></tr><tr><td>Chem</td><td><input title="Single Chem" onclick="ff()" type="radio" id="Chemsingle" name="Chem" checked=""></td><td><input title="Week Chem" onclick="ff()" type="radio" id="Chemweek" name="Chem"></td><td><input title="All Chem" onclick="ff()" type="radio" id="Chemall" name="Chem"></td></tr><tr><td>Cardiac</td><td><input title="Single Cardiac" onclick="ff()" type="radio" id="Cardiacsingle" name="Cardiac" checked=""></td><td><input title="Week Cardiac" onclick="ff()" type="radio" id="Cardiacweek" name="Cardiac"></td><td><input title="All Cardiac" onclick="ff()" type="radio" id="Cardiacall" name="Cardiac"></td></tr><tr><td>Iron</td><td><input title="Single Iron" onclick="ff()" type="radio" id="Ironsingle" name="Iron" checked=""></td><td><input title="Week Iron" onclick="ff()" type="radio" id="Ironweek" name="Iron"></td><td><input title="All Iron" onclick="ff()" type="radio" id="Ironall" name="Iron"></td></tr><tr><td>Liver</td><td><input title="Single Liver" onclick="ff()" type="radio" id="Liversingle" name="Liver" checked=""></td><td><input title="Week Liver" onclick="ff()" type="radio" id="Liverweek" name="Liver"></td><td><input title="All Liver" onclick="ff()" type="radio" id="Liverall" name="Liver"></td></tr><tr><td>Coags</td><td><input title="Single Coags" onclick="ff()" type="radio" id="Coagssingle" name="Coags" checked=""></td><td><input title="Week Coags" onclick="ff()" type="radio" id="Coagsweek" name="Coags"></td><td><input title="All Coags" onclick="ff()" type="radio" id="Coagsall" name="Coags"></td></tr><tr><td>Lipid-a1c</td><td><input title="Single Lipid-a1c" onclick="ff()" type="radio" id="Lipid-a1csingle" name="Lipid-a1c" checked=""></td><td><input title="Week Lipid-a1c" onclick="ff()" type="radio" id="Lipid-a1cweek" name="Lipid-a1c"></td><td><input title="All Lipid-a1c" onclick="ff()" type="radio" id="Lipid-a1call" name="Lipid-a1c"></td></tr><tr><td>Glucose</td><td><input title="Single Glucose" onclick="ff()" type="radio" id="Glucosesingle" name="Glucose" checked=""></td><td><input title="Week Glucose" onclick="ff()" type="radio" id="Glucoseweek" name="Glucose"></td><td><input title="All Glucose" onclick="ff()" type="radio" id="Glucoseall" name="Glucose"></td></tr><tr><td>UA</td><td><input title="Single UA" onclick="ff()" type="radio" id="UAsingle" name="UA" checked=""></td><td><input title="Week UA" onclick="ff()" type="radio" id="UAweek" name="UA"></td><td><input title="All UA" onclick="ff()" type="radio" id="UAall" name="UA"></td></tr><tr><td>UDS</td><td><input title="Single UDS" onclick="ff()" type="radio" id="UDSsingle" name="UDS" checked=""></td><td><input title="Week UDS" onclick="ff()" type="radio" id="UDSweek" name="UDS"></td><td><input title="All UDS" onclick="ff()" type="radio" id="UDSall" name="UDS"></td></tr><tr><td>ABG</td><td><input title="Single ABG" onclick="ff()" type="radio" id="ABGsingle" name="ABG" checked=""></td><td><input title="Week ABG" onclick="ff()" type="radio" id="ABGweek" name="ABG"></td><td><input title="All ABG" onclick="ff()" type="radio" id="ABGall" name="ABG"></td></tr><tr><td>Changes</td><td><input onclick="ff()" type="radio" id="viewchangessingle" name="viewchange" checked=""></td><td><input onclick="ff()" type="radio" id="viewchangesweek" name="viewchange"></td><td><input onclick="ff()" type="radio" id="viewchangesall" name="viewchange"></td></tr></tbody></table>
+</div>
+<div id="main" class="row" style="float:right;">
+<div class="twelve columns">
+<div style="margin: 0px 7px; padding: 0px; width: 706px; height: 2px; display: block; background-color: none;"></div>
+<textarea name="clipb" onpaste="return opf();" id="clipb" spellcheck="false" autocomplete="false"></textarea>
+<div name="edtData" id="edtData" onpaste="return false;" autocomplete="false" spellcheck="false" contenteditable="true"></div>
+<form style="text-align: center;" name="data1">
+</form>
+</div>
+</div>
+
+<!-- main end --></section>
+</div>
+<!-- end intro section --><!-- footer
+   ================================================== --><footer>
+
+   </footer><!-- Footer End--></div>
+   <div style="margin: 0px 7px; padding: 0px; width: 606px; height: 20px; display: block;">
+   <br>
+   <br>
+   <a href="https://web.archive.org/web/20230117075429/http://www-personal.umich.edu/~fmhoward/CPRS%20Lab%20Formatter.pdf">Instructions</a><br>
+<div style="text-decoration: underline; color:blue" onclick="document.getElementById(&#39;popupform&#39;).style.display = &#39;block&#39;;">Terms and Conditions</div>
+<br>Review the <a href="https://web.archive.org/web/20230117075429/https://www.va.gov/TRM/ToolPage.asp?tid=9660">VA TRM listing</a> for this application before use.<br><br>
+v1.0.1 - fixed bug with ABG calculations, correct Na for glucose, 
+display degree of hemolysis for K, calculate albumin corrected AG, 
+calculate SAAG. <br>
+
+v1.0.2 - fixed bug with Micro data display, fixed bug with AG calculations.<br>
+v1.0.3 - added fentanyl to UDS.<br>
+v1.0.4 - updated to fit with new display name for oxycodone UDS. Added Ethyl Glucuronide to UDS trend.<br>
+Please contact fhoward@gmail.com with issues/questions.
+</div>
+
+
+</body></html>

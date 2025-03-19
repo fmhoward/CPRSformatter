@@ -126,6 +126,46 @@ background-color:#313131;
     ================================================== --><link rel="stylesheet" href="./CPRS Lab Formatter_files/default.htm"><link rel="stylesheet" href="./CPRS Lab Formatter_files/layout.htm"><!-- Script
    ================================================== -->
 <script language="javascript">
+	<script>
+function processLabData(labData) {
+    // Existing code to process other lab results
+
+    // Add code to handle ATELLICA lab results
+    if (labData.includes("ATELLICA")) {
+        // Extract ATELLICA lab results
+        const atellicaResults = extractAtellicaResults(labData);
+        // Format and display the ATELLICA lab results
+        displayAtellicaResults(atellicaResults);
+    }
+}
+
+function extractAtellicaResults(labData) {
+    // Example logic to extract ATELLICA lab results from the data
+    const atellicaPattern = /(?:PHOSPHORUS|CHOLESTEROL|TRIGLYCERIDES|HDL CHOLESTEROL|dLDL CHOLESTEROL|VLDL CHOLESTEROL|GLUCOSE|BUN|CREATININE|SODIUM|POTASSIUM|CHLORIDE|CO2|CALCIUM|EGFR|URIC ACID|ANION GAP|ALBUMIN|PTH INTACT|FERRITIN|VITAMIN D|PSA|IRON|TIBC)\s*\(ATELLICA\):\s*([\d.]+)/g;
+    const results = [];
+    let match;
+    while ((match = atellicaPattern.exec(labData)) !== null) {
+        results.push({
+            test: match[1],
+            value: match[2]
+        });
+    }
+    return results;
+}
+
+function displayAtellicaResults(results) {
+    // Example logic to display the ATELLICA lab results
+    const container = document.getElementById('atellicaResultsContainer');
+    results.forEach(result => {
+        const resultElement = document.createElement('div');
+        resultElement.textContent = `${result.test}: ${result.value}`;
+        container.appendChild(resultElement);
+    });
+}
+</script>
+
+<!-- Add a container to display the ATELLICA lab results -->
+<div id="atellicaResultsContainer"></div>
 
 var vals = {};
 var listVals = {};
